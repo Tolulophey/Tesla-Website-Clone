@@ -1,0 +1,46 @@
+
+
+.Banner{
+    width:100%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background-image: url('/public/M3-Homepage-Desktop-LHD.jpg');
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: cover;
+    /* background-color: aqua; */
+}
+
+.banner-info> h1{
+    font-family: 'Montserrat', sans-serif;
+    color:black;
+    margin-top:40px;
+    font-size: 40px;
+}
+
+.banner-info> a{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color:black;
+}
+
+.arrow-down{
+    margin-top: 20px;
+}
+
+/* .banner.active >h1{
+    animation: fadeIn 2s;
+  	opacity: 1;
+}
+
+@keyframes banner-active {
+    from {
+        opacity: 0;
+    }
+    to {
+       opacity: 1;
+    }
+  } */

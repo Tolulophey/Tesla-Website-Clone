@@ -1,0 +1,32 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.thirdbanner{
+    width:100%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/public/Homepage-Model-S-Desktop-LHD.jpg');
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: cover;
+    /* background-color: bisque; */
+}
+
+.thirdbanner> h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    margin-top:40px;
+    font-size: 40px;
+}
+
+.thirdbanner> a{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color:black;
+}

@@ -1,0 +1,32 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.secondbanner{
+    width:100%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/public/Desktop-ModelY.jpg');
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: cover;
+    /* background-color: brown; */
+}
+
+.secondbanner> h1{
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    margin-top:40px;
+    font-size: 40px;
+}
+
+.secondbanner> a{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color:black;
+}
