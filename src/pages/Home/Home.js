@@ -5,6 +5,7 @@ import ThirdBanner from '../../Components/ThirdBanner/ThirdBanner';
 import FourthBanner from '../../Components/FourthBanner/FourthBanner';
 import FifthBanner from '../../Components/FifthBanner/FifthBanner';
 import SixthBanner from '../../Components/SixthBanner/SixthBanner';
+import Footer from '../../Components/Footer/Footer';
 // import Signin from '../../pages/Sign-in/signin';
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
       <FourthBanner/>
       <FifthBanner/>
       <SixthBanner/>
+      <Footer/>
       {/* <Signin/> */}
     </div>
   )

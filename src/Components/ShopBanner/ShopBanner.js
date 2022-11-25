@@ -20,9 +20,9 @@ function Banner() {
   // window.addEventListener('scroll', fadeTitle);
 
   return (
-    <div className='Banner'>
+    <div className='Shopbanner'>
        <ShopNavbar/>
-       <div className="banner-info">
+       <div className="shop-banner-info">
             <h1>Wall Connector</h1>
             <p>The most convienient way to charge at home</p>
             <button className='shop-now'>Shop Now</button>

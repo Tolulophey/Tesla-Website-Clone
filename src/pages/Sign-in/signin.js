@@ -2,6 +2,7 @@ import React from 'react'
 import './signin.css'
 import logo from '../../assets/tesla-logo-png-20.png'
 import { Link } from 'react-router-dom'
+import Footer from '../../Components/Footer/Footer'
 
 const Signin = () => {
   return (
@@ -35,6 +36,7 @@ const Signin = () => {
           </div>
         </div>
      </div>
+     <Footer/>
      
       
     </div>

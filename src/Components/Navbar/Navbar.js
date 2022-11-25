@@ -24,7 +24,7 @@ function Navbar() {
         </div>
         <div class="buttons">
             <BsCart2 className='cart'/>
-            <Link to="sign-in" className='account'>Account</Link>
+            <Link to="sign-in" className='myAccount'>Account</Link>
             <a href="#login" className="login"> Logout</a>
         </div>
     </div>

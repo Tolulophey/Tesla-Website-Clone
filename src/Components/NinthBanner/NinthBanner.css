@@ -1,30 +1,61 @@
 .cards{
     width:100%;
-    height:100vh;
+    /* height:100vh; */
     display: flex;
     flex-direction: row;
     background-color: grey;
+    
 }
 
 .cards-container{
-    width:80%;
-    height:100vh;
+    width:calc(100%/3);
+    /* height:100vh; */
     display: flex;
     flex-direction: column;
-    border:1px solid grey;
-    margin-right: calc(5%/4);
+    position: relative;
+    background-image: url('/public/Men_web.avif');
+    background-size: cover;
+    /* border:1px solid grey; */
+    /* margin:0px calc(10%/3); */
     /* margin:0px calc(20%/4); */
     
 }
 
 .product-images{
     width:100%;
-    height:100vh;
+    /* height:100vh; */
+}
+
+.card-text{
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
-.shop-now{
-    width:300px;
+.card-container-content{
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* text-align: center; */
+    position: absolute;
+    top:80%;
+    left:10%;
+    /* background-color: aqua; */
+    
+}
+
+.cards-container:nth-child(2){
+    margin:0px 10px ;
+}
+
+
+.card-container-content > button{
+    width:100%;
     height:40px;
     border-radius: 5px;
     border:none;
@@ -35,4 +66,5 @@
     cursor: pointer;
     font-size: 14px;
     margin:0px auto;
+    font-family: 'Montserrat', sans-serif;
 }

@@ -9,8 +9,10 @@ const NinthBanner = () => {
         return(
           <div className="cards-container">
              <img src={cards.image} alt="img" key={index+1} className="product-images"/>
-             <p className='card-text'>{cards.name}</p>
-             <button className='shop-now'>Shop Now</button>
+             <div className="card-container-content">
+              <p className='card-text'>{cards.name}</p>
+              <button>Shop Now</button>
+             </div>
           </div>
            
         )

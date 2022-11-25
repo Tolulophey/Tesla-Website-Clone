@@ -1,0 +1,141 @@
+
+.photo{
+    width:100%;
+    height:350px;
+    display:flex;
+    flex-direction: row;
+    margin: 0;
+}
+.app__gallery-images {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    position: relative;
+}
+
+.app__gallery-images_container {
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;  
+}
+
+.secondProduct{
+    margin:0px 15px;
+}
+
+.app__gallery-images_container::-webkit-scrollbar {
+    display: none;
+}
+
+.app__gallery-images_card {
+    position: relative;
+    min-width: 301px;
+    height: 447px;
+    display: flex;
+    align-items: center;
+}
+
+.gallery__image-icon {
+    position: absolute;
+    color: #fff;
+    font-size: 2rem;
+    opacity: 0;
+    transition: .5s ease;
+    cursor: pointer;
+    top:50%;
+    left:35%;
+}
+
+.app__gallery-images_card img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    opacity: 1;
+    transition: .5s ease;
+}
+
+.app__gallery-images_card:hover img {
+    opacity: .35;
+}
+
+.app__gallery-images_card:hover .gallery__image-icon {
+    opacity: 1;
+}
+
+
+.app__gallery-images_arrows {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top:50%;
+    position: absolute;
+}
+
+.gallery__arrow-icon {
+    color: black;
+    font-size: 3rem;
+    cursor: pointer;
+    background-color: rgb(228, 218, 218);
+    border-radius: 50px;
+}
+
+.gallery__arrow-icon:hover {
+    background-color: white;
+    color: var(--color-white);
+}
+
+@media screen and (min-width: 2000px) {
+    .app__gallery-content button {
+        margin-top: 2rem;
+    }
+
+    .app__gallery-content {
+        min-width: 1000px;
+        padding-right: 4rem;
+    }
+
+    .app__gallery-images_card {
+        min-width: 400px;
+        height: 547px;
+    }
+}
+
+@media screen and (max-width:912px) {
+    .photo-info {
+        width: 50%;
+        padding: 50px;
+    }
+}
+
+
+@media screen and (max-width:400px),(max-width:500px), (max-width:600px) {
+    .photo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .photo-info{
+        width:100%;
+        align-items: center;
+    }
+
+    .app__gallery-images{
+        width:100%;
+    }
+
+    .app__gallery-images_card img{
+        width:90%;
+    }
+
+    .app__gallery-images_arrows{
+        width:100%;
+    }
+}
+
