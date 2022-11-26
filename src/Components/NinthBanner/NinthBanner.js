@@ -1,6 +1,7 @@
 import React from 'react'
 import './NinthBanner.css'
 import wears from './Data'
+import { Link } from 'react-router-dom'
 
 const NinthBanner = () => {
   return (
@@ -11,7 +12,7 @@ const NinthBanner = () => {
              <img src={cards.image} alt="img" key={index+1} className="product-images"/>
              <div className="card-container-content">
               <p className='card-text'>{cards.name}</p>
-              <button>Shop Now</button>
+              <Link to={cards.link} className="men-shop">Shop Now</Link>
              </div>
           </div>
            

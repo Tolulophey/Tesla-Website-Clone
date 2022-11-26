@@ -23,7 +23,7 @@
 
 .product-images{
     width:100%;
-    /* height:100vh; */
+    height:100vh;
 }
 
 .card-text{
@@ -67,4 +67,22 @@
     font-size: 14px;
     margin:0px auto;
     font-family: 'Montserrat', sans-serif;
+}
+
+.card-container-content >a{
+    font-size: 15px;
+    display: inline-block;
+    line-height:40px;
+    width:80%;
+    margin:0px calc(20%/2);
+    text-align: center;
+    text-decoration: none;
+    height:40px;
+    border-radius: 25px;
+    background-color: black;
+    /* border:2px solid black; */
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    /* background-color: grey; */
+    
 }

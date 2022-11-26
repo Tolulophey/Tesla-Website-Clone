@@ -9,6 +9,9 @@ import Shop from './pages/Shop/shop'
 // import './App.css';
 import './index.css'
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import MenApparel from './pages/Menapparel/menApparel'
+import WomenApparel from './pages/WomenApparel/womenApparel'
+import KidsApparel from './pages/KidsApparel/kidsApparel'
 // import './App.css';
 
 
@@ -24,6 +27,9 @@ function App() {
             <Route path="/" element={<Home />}/>
             <Route path="/sign-in" element={<SignIn />}/>
             <Route path="/shop" element={<Shop />}/>
+            <Route path="/shop/men-apparel" element={<MenApparel />}/>
+            <Route path="/shop/women-apparel" element={<WomenApparel />}/>
+            <Route path="/shop/kids-apparel" element={<KidsApparel />}/>
             
         </Routes>
         {/* <Footer /> */}

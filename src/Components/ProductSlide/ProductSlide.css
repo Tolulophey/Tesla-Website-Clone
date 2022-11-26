@@ -23,6 +23,7 @@
     scrollbar-width: none;  
 }
 
+
 .secondProduct{
     margin:0px 15px;
 }
@@ -74,6 +75,7 @@
     align-items: center;
     top:50%;
     position: absolute;
+    padding: 0px 10px;
 }
 
 .gallery__arrow-icon {
