@@ -1,6 +1,6 @@
 .shop_item{
     padding: 0 48px;
-    padding-top: 100px;
+    padding-top: 80px;
     width: 100%;
 }
 
@@ -8,7 +8,7 @@
 .shop_product{
     display: flex;
     margin-bottom: 50px;
-    padding: 0 48px;
+    /* padding: 0 48px; */
 }
 .shop_product > .left{
     width: 60%;
@@ -132,4 +132,55 @@
 }
 .recommended_product > .recommended_products_cards > .product_card > .product_title_details > h5{
     margin-top: 8px;
+}
+
+@media screen and (max-width:900px) {
+    .shop_item {
+        padding: 0;
+        padding-top: 80px;
+        width: 100%;
+    }
+        .shop_product{
+        flex-direction: column;
+        margin-bottom: 50px;
+        padding: 0;
+    }
+    .shop_product > .left{
+        width: 100%;
+        margin: 50px 0;
+        /* border-right: 5px solid black; */
+        padding: 0;
+    }
+    .shop_product > .right{
+        width: 100%;
+        /* padding: 0 48px; */
+        padding-left: 16px;
+
+    }
+    .shop_product > .right > .add {
+        width: 300px;
+        font-size: 18px;
+    }
+
+    .recommended_product {
+        margin-top: 40px;
+        padding-left: 16px;
+    }
+    .recommended_product > .recommended_products_cards > .product_card{
+        width: 31%;
+    }
+    .recommended_product > .recommended_products_cards > .product_card > .product_img{
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+}
+@media screen and (max-width:400px){
+    .recommended_product > .recommended_products_cards > .product_card{
+        width: 43%;
+    }
+    .recommended_product > .recommended_products_cards > .product_card > .product_title_details > a > h5 {
+        font-size: 12px;
+        margin-top: 10px;
+    }
 }

@@ -1,8 +1,9 @@
 /* shop producs */
 .menApparel{
     padding: 0 48px;
-    padding-top: 100px;
+    padding-top: 80px;
     width: 100%;
+    background-color: rgb(135, 135, 135);
     margin-top: 60px;
     margin-bottom: 23px;
 }
@@ -48,4 +49,29 @@
 }
 .menApparel > .men-container > .product_card > .product_title_details > h5{
     margin-top: 8px;
+}
+
+@media screen and (max-width:900px) {
+    .menApparel {
+        margin-top: 40px;
+        padding: 10px;
+    }
+    .menApparel > .men-container > .product_card{
+        width: 30%;
+        margin-right: 15px;
+    }
+    .menApparel > .men-container > .product_card > .product_img{
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+}
+@media screen and (max-width:400px){
+    .menApparel > .men-container > .product_card{
+        width: 43%;
+    }
+    .menApparel > .men-container > .product_card > .product_title_details > a > h5 {
+        font-size: 12px;
+        margin-top: 10px;
+    }
 }
