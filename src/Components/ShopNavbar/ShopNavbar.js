@@ -7,7 +7,7 @@ import {Link} from "react-router-dom"
 // import { SlArrowDown } from "react-icons/sl";
 
 
-function Navbar() {
+function ShopNavbar() {
 
   // const [toggleMenu, setToggleMenu] = useState(false);
   const [navbar, setNabvar] = useState(false);
@@ -32,7 +32,7 @@ function Navbar() {
             <div className={navbar ? 'divide active' : 'divide'}></div>
             <p className={navbar ? 'shop active' : 'shop'}>Shop</p>
         </div>
-        <div class={navbar ? 'shopnavbar-links active' : 'shopnavbar-links'}>
+        <div className={navbar ? 'shopnavbar-links active' : 'shopnavbar-links'}>
           <ul>
             <li>Charging</li>
             <li>Vehicle Accessories</li>
@@ -49,4 +49,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default ShopNavbar
