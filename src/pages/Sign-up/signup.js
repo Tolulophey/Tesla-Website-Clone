@@ -18,6 +18,9 @@ const SignUp = () => {
   localStorage.getItem(localStorage.getItem("authenticated") || false)
   );
  useEffect(() => {
+  if(authenticated){
+      navigate("/shop")
+    }
    if(password !== cPassword && cPassword !== ""){
       setPasswordMatch(false)
     } else{
@@ -25,7 +28,7 @@ const SignUp = () => {
       setRegistered(true)
     }
 
- }, [password, cPassword])
+ }, [password, cPassword, authenticated, navigate])
  
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,6 +37,7 @@ const SignUp = () => {
       await localStorage.setItem("lastName", lastName)
       await localStorage.setItem("email", email)
       await localStorage.setItem("password", password)
+      await localStorage.setItem("authenticated", true)
       setAuthenticated(true)
       navigate("/shop")
     } else{
