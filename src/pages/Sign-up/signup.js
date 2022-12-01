@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import { useNavigate } from "react-router-dom";
 import './signup.css'
 import logo from '../../assets/tesla-logo-png-20.png'
-// import { Link } from 'react-router-dom'
 import Footer from '../../Components/Footer/Footer'
 
 const SignUp = () => {
