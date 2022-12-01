@@ -13,4 +13,5 @@ const ApparelPage = () => {
   )
 }
 
+
 export default ApparelPage
