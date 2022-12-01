@@ -2,11 +2,19 @@ import React from 'react'
 import './Navbar.css'
 import logo from '../../assets/tesla-logo-png-20.png'
 import {BsCart2} from 'react-icons/bs'
-import {Link} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 // import { SlArrowDown } from "react-icons/sl";
 
 
 function Navbar() {
+  const navigate = useNavigate()
+  const handleRoute = ()=>{
+    if(localStorage.getItem("authenticated")){
+      navigate("/shop")
+    } else{
+      navigate("/sign-in")
+    }
+  }
   return (
     <div class="navbar">
         <div class="logo">
@@ -24,7 +32,10 @@ function Navbar() {
         </div>
         <div class="buttons">
             <BsCart2 className='cart'/>
-            <Link to="sign-in" className='myAccount'>Account</Link>
+            <p 
+            className='myAccount'
+            onClick={handleRoute}
+            >Account</p>
             <a href="#login" className="login"> Logout</a>
         </div>
     </div>

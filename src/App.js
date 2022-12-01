@@ -8,7 +8,7 @@ import ApparelPage from "./pages/Apparel/ApparelPage"
 import ShopItemPage from './pages/ShopItem/shopItemPage'
 import './index.css'
 import ScrollToTop from './Components/scrollTop'
-// import Login from './Components/Login/Login'
+
 
 
 

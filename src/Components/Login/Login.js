@@ -5,7 +5,7 @@ function Login() {
 const navigate = useNavigate();
 const [username, setusername] = useState("");
 const [password, setpassword] = useState("");
-const [authenticated, setauthenticated] = useState(
+const [authenticated, setAuthenticated] = useState(
 localStorage.getItem(localStorage.getItem("authenticated") || false)
 );
 const users = [{ username: "Jane", password: "testpassword"}];
@@ -13,7 +13,7 @@ const handleSubmit = (e) => {
 e.preventDefault();
 const account = users.find((user) => user.username === username);
 if (account && account.password === password) {
-    setauthenticated(localStorage.setItem("authenticated", true))
+    setAuthenticated(localStorage.setItem("authenticated", true))
     navigate("/shop");
 }
 };

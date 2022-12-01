@@ -1,10 +1,49 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import { useNavigate } from "react-router-dom";
 import './signup.css'
 import logo from '../../assets/tesla-logo-png-20.png'
-import { Link } from 'react-router-dom'
 import Footer from '../../Components/Footer/Footer'
 
-const Signin = () => {
+const SignUp = () => {
+  const navigate = useNavigate();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [cPassword, setCPassword] = useState("");
+  const [passwordMatch, setPasswordMatch] = useState(true);
+  const [registered, setRegistered] = useState(true);
+  const [authenticated, setAuthenticated] = useState(
+  localStorage.getItem(localStorage.getItem("authenticated") || false)
+  );
+ useEffect(() => {
+  if(authenticated){
+      navigate("/shop")
+    }
+   if(password !== cPassword && cPassword !== ""){
+      setPasswordMatch(false)
+    } else{
+      setPasswordMatch(true)
+      setRegistered(true)
+    }
+
+ }, [password, cPassword, authenticated, navigate])
+ 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if(passwordMatch && password !== ""){
+      await localStorage.setItem("firstName", firstName)
+      await localStorage.setItem("lastName", lastName)
+      await localStorage.setItem("email", email)
+      await localStorage.setItem("password", password)
+      await localStorage.setItem("authenticated", true)
+      setAuthenticated(true)
+      navigate("/shop")
+    } else{
+        setRegistered(false)
+    }
+  
+  };
   return (
     <div className='sign-up'>
       <div className="signup-logo">
@@ -15,19 +54,54 @@ const Signin = () => {
          <h1 className='signup-text'>Create Account</h1>
         </div>
         <div className="signup-form-info">
-          <form>
+          <form onSubmit={handleSubmit}>
               <label className='label-text'>First Name</label><br/>
-              <input type="text" name="email" required/>
+              <input 
+              type="text" 
+              name="firstname"
+              onChange={(e) => setFirstName(e.target.value)} 
+              // required
+              />
+
               <label className='label-text'>Last Name</label><br/>
-              <input type="text" name="email" required/>
+              <input 
+              type="text" 
+              name="lastname" 
+              onChange={(e) => setLastName(e.target.value)} 
+              // required
+              />
+
+              <label className='label-text'>Email</label><br/>
+              <input 
+              type="email" 
+              name="email" 
+              onChange={(e) => setEmail(e.target.value)} 
+              // required
+              />
+
               <label className='label-text'>Password</label><br/>
-              <input type="text" name="email" required/>
+              <input 
+              type="password" 
+              name="password" 
+              onChange={(e) => setPassword(e.target.value)} 
+              // required
+              />
+
               <label className='label-text'>Confirm password</label><br/>
-              <input type="text" name="email" required/>
+              <input 
+              type="password" 
+              name="cpassword"
+              onChange={(e) => setCPassword(e.target.value)} 
+              // required
+              />
+              <p className={passwordMatch ? "pass_match" : "pass_match false"}>passwords do not math</p>
+
               <p className='agreement'>By continuing, I understand and agree to Tesla's Privacy Notice and Terms of Use for creating a Tesla Account</p>
+              <div className="submit">
+                <input type="submit" className='submit-btn' value="SUBMIT" />
+              </div>
           </form>
-          <Link to="/sign-in" className='next-btn'>Next</Link>
-        
+          <p className={registered ? "registered": "registered registered_not"}>kindly confirm your password entered</p>
         </div>
      </div>
      <Footer/>
@@ -37,4 +111,4 @@ const Signin = () => {
   )
 }
 
-export default Signin
+export default SignUp
