@@ -7,7 +7,7 @@ import ApparelPage from "./pages/Apparel/ApparelPage"
 import ShopItemPage from './pages/ShopItem/shopItemPage'
 import './index.css'
 import ScrollToTop from './Components/scrollTop'
-// import Login from './Components/Login/Login'
+
 
 
 
@@ -20,7 +20,6 @@ function App() {
         <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="/sign-in" element={<SignIn />}/>
-            {/* <Route path="/login" element={<Login />}/> */}
             <Route path="/shop" element={<Shop />}/>
             <Route path="/shop/:name/:id" element={<ShopItemPage />}/>
             <Route path="/shop/:name" element={<ApparelPage />}/>
