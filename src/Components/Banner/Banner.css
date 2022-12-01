@@ -21,10 +21,11 @@
     font-size: 40px;
 }
 
-.banner-info> a{
+.banner-info > a{
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     color:black;
+
 }
 
 .arrow-down{
@@ -44,3 +45,9 @@
        opacity: 1;
     }
   } */
+
+  @media screen and (max-width:300px), (max-width:400px), (max-width:600px) {
+    .Banner{
+        width:100%;
+    }
+  }

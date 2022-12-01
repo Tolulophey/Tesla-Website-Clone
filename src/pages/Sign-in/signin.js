@@ -19,10 +19,10 @@ const Signin = () => {
               <label className='label-text'>Email Address</label><br/>
               <input type="text" name="email"/>
           </form>
-          <button className='next-btn'>Next</button>
+          <Link to="/shop" className='next-btn'>Next</Link>
           <div className="password">
               <a href="https://www.google.com">Forgot Email?</a>
-              <div/>
+              <div></div>
               <a href="https://www.google.com">Forgot Password?</a>
           </div>
 
@@ -32,7 +32,7 @@ const Signin = () => {
                 <p>OR</p>
                 <hr/>
               </div>
-              <Link to="/shop" className='create-account'>Create Account</Link>
+              <Link to="/sign-up" className='create-account'>Create Account</Link>
           </div>
         </div>
      </div>
