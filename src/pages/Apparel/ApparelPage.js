@@ -1,16 +1,16 @@
 import React from 'react'
 import ShopNavbar from '../../Components/ShopNavbar/ShopNavbar'
-import WomenApparel from '../../Components/WomenApparel/WomenApparel'
+import Apparel from '../../Components/Apparel/Apparel'
 import Footer from '../../Components/Footer/Footer';
 
-const menApparel = () => {
+const ApparelPage = () => {
   return (
     <div className='menApparelpage'>
         <ShopNavbar/>
-        <WomenApparel/>
+        <Apparel />
         <Footer/>
     </div>
   )
 }
 
-export default menApparel
+export default ApparelPage

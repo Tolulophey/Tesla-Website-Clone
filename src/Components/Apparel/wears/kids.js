@@ -1,12 +1,12 @@
-import image1 from '../../../src/assets/Kids/1740410-00-A_1.avif'
-import image2 from '../../../src/assets/Kids/1742694-00-A_3 (1).avif'
-import image3 from '../../../src/assets/Kids/1742694-00-A_3.avif'
-import image4 from '../../../src/assets/Kids/1742702-00-A_1.avif'
-import image5 from '../../../src/assets/Kids/1742702-00-A_1.avif'
-import image6 from '../../../src/assets/Kids/7652453-00-A_1.avif'
-import image7 from '../../../src/assets/Kids/8529318-00-A_1.avif'
-import image8 from '../../../src/assets/Kids/8529342-00-A_1.avif'
-import image9 from '../../../src/assets/Kids/8529342-00-A_1.avif'
+import image1 from '../../../assets/Kids/1740410-00-A_1.avif'
+import image2 from '../../../assets/Kids/1742694-00-A_3 (1).avif'
+import image3 from '../../../assets/Kids/1742694-00-A_3.avif'
+import image4 from '../../../assets/Kids/1742702-00-A_1.avif'
+import image5 from '../../../assets/Kids/1742702-00-A_1.avif'
+import image6 from '../../../assets/Kids/7652453-00-A_1.avif'
+import image7 from '../../../assets/Kids/8529318-00-A_1.avif'
+import image8 from '../../../assets/Kids/8529342-00-A_1.avif'
+import image9 from '../../../assets/Kids/8529342-00-A_1.avif'
 
 
 

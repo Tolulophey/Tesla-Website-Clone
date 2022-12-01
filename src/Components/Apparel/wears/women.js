@@ -1,14 +1,12 @@
-import image1 from '../../../src/assets/Women/1740231-00-A_1.avif'
-import image2 from '../../../src/assets/Women/1740290-00-A_1.jpg'
-import image3 from '../../../src/assets/Women/1740535-00-A_1.avif'
-import image4 from '../../../src/assets/Women/1741441-00-A_1.avif'
-import image5 from '../../../src/assets/Women/1866149-00-A_3_2000.avif'
-import image6 from '../../../src/assets/Women/8765090-00-A_1.avif'
-import image7 from '../../../src/assets/Women/8765095-00-A_1.jpg'
-import image8 from '../../../src/assets/Women/1740535-00-A_1.avif'
-import image9 from '../../../src/assets/Women/8765105-00-A_1.avif'
-
-
+import image1 from '../../../assets/Women/1740231-00-A_1.avif'
+import image2 from '../../../assets/Women/1740290-00-A_1.jpg'
+import image3 from '../../../assets/Women/1740535-00-A_1.avif'
+import image4 from '../../../assets/Women/1741441-00-A_1.avif'
+import image5 from '../../../assets/Women/1866149-00-A_3_2000.avif'
+import image6 from '../../../assets/Women/8765090-00-A_1.avif'
+import image7 from '../../../assets/Women/8765095-00-A_1.jpg'
+import image8 from '../../../assets/Women/1740535-00-A_1.avif'
+import image9 from '../../../assets/Women/8765105-00-A_1.avif'
 
 const wears = [
     {
