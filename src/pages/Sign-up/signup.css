@@ -64,6 +64,11 @@ form{
     /* text-align: center; */
 }
 
+.submit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .signup-form-info{
     display: flex;
     flex-direction: column;
@@ -77,20 +82,21 @@ form > input{
     height:40px;
     border-radius: 25px;
     border:none;
-    background-color: grey;
+    background-color: rgba(128, 128, 128, 0.5);
     margin-bottom: 10px;
+    padding: 0 20px;
 }
 
-.next-btn{
+.submit-btn{
     font-family: 'Montserrat', sans-serif;
     width:80%;
-    margin:0px calc(20%/2);
     height:40px;
     border-radius: 25px;
     border:none;
     color:white;
     background-color: black;
     margin:20px 0px;
+    cursor: pointer;
 }
 
 .agreement{
@@ -99,6 +105,32 @@ form > input{
     font-size: 13px;
 }
 
+.pass_match{
+    display: none;
+    color: red;
+    font-size: small;
+    padding: 5px 0;
+    font-weight: 500;
+    width:80%;
+    margin:0px calc(20%/2);
+}
+
+.pass_match.false{
+    display: block;
+}
+.registered{
+    display: none;
+    color: red;
+    font-size: small;
+    padding: 5px 0;
+    font-weight: 500;
+    width:80%;
+    margin:0px calc(20%/2);
+}
+
+.registered.registered_not{
+    display: block;
+}
 
 
 @media screen and (max-width:400px),(max-width:500px) {
