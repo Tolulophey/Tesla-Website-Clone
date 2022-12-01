@@ -12,11 +12,13 @@
 .menApparel > h1{
     /* padding-left: 30px; */
     padding:20px 30px;
+    color: white;
     font-family: 'Montserrat', sans-serif;
 }
 
 .menApparel > p{
     font-size: 14px;
+    color: white;
     padding-left: 30px;
     font-family: 'Montserrat', sans-serif;
 }

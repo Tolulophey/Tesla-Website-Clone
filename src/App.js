@@ -2,6 +2,7 @@ import React from 'react'
 // import Navbar from './pages/Navbar/Navbar';
 import Home from './pages/Home/Home'
 import SignIn from './pages/Sign-in/signin'
+import SignUp from './pages/Sign-up/signup'
 import Shop from './pages/Shop/shop'
 
 
@@ -25,6 +26,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="/sign-in" element={<SignIn />}/>
+            <Route path="/sign-up" element={<SignUp />}/>
             <Route path="/shop" element={<Shop />}/>
             <Route path="/shop/men-apparel/:id" element={<ShopItemPage />}/>
             <Route path="/shop/men-apparel" element={<MenApparel />}/>

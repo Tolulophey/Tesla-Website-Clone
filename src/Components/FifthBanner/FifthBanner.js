@@ -1,6 +1,6 @@
 import React from 'react'
 import './FifthBanner.css'
-import SecondButton from '../../Reusuables/SecondButton/Button'
+import SecondButton from '../../Reusuables/SecondButton/SecondButton'
 
 function FifthBanner() {
   return (
