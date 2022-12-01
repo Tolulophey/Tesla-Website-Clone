@@ -1,20 +1,15 @@
 import React from 'react'
-// import Navbar from './pages/Navbar/Navbar';
 import Home from './pages/Home/Home'
 import SignIn from './pages/Sign-in/signin'
 import SignUp from './pages/Sign-up/signup'
 import Shop from './pages/Shop/shop'
-
-
-// import  LoginForm from './components/LoginForm';
-// import './App.css';
-import './index.css'
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
-import MenApparel from './pages/Menapparel/menApparel'
-import WomenApparel from './pages/WomenApparel/womenApparel'
-import KidsApparel from './pages/KidsApparel/kidsApparel'
+import ApparelPage from "./pages/Apparel/ApparelPage"
 import ShopItemPage from './pages/ShopItem/shopItemPage'
-// import './App.css';
+import './index.css'
+import ScrollToTop from './Components/scrollTop'
+// import Login from './Components/Login/Login'
+
 
 
 
@@ -22,19 +17,15 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {/* <Header /> */}
+        <ScrollToTop />
         <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="/sign-in" element={<SignIn />}/>
             <Route path="/sign-up" element={<SignUp />}/>
             <Route path="/shop" element={<Shop />}/>
-            <Route path="/shop/men-apparel/:id" element={<ShopItemPage />}/>
-            <Route path="/shop/men-apparel" element={<MenApparel />}/>
-            <Route path="/shop/women-apparel" element={<WomenApparel />}/>
-            <Route path="/shop/kids-apparel" element={<KidsApparel />}/>
-            
+            <Route path="/shop/:name/:id" element={<ShopItemPage />}/>
+            <Route path="/shop/:name" element={<ApparelPage />}/>
         </Routes>
-        {/* <Footer /> */}
       </Router>
   </div>
   )

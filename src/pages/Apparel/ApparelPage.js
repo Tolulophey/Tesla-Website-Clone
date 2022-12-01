@@ -1,7 +1,17 @@
 import React from 'react'
+import ShopNavbar from '../../Components/ShopNavbar/ShopNavbar'
+import Apparel from '../../Components/Apparel/Apparel'
+import Footer from '../../Components/Footer/Footer';
 
-export default function ApparelPage() {
+const ApparelPage = () => {
   return (
-    <div>ApparelPage</div>
+    <div className='menApparelpage'>
+        <ShopNavbar/>
+        <Apparel />
+        <Footer/>
+    </div>
   )
 }
+
+
+export default ApparelPage

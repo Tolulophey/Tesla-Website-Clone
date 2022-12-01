@@ -1,0 +1,79 @@
+/* shop producs */
+.apparel{
+    padding: 0 48px;
+    padding-top: 80px;
+    width: 100%;
+    background-color: rgb(135, 135, 135);
+    margin-top: 60px;
+    margin-bottom: 23px;
+}
+.apparel > h3{
+    font-size: 30px;
+}
+.product_container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10px 0;
+    /* display: none; */
+}
+
+.apparel > .product_container > .product_card{
+    width: calc(100%/3);
+    width: 403px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+.apparel > .product_container > .product_card > .product_img{
+    width: 403px;
+    height: 403px;
+}
+.apparel > .product_container > .product_card > .product_img a,
+.apparel > .product_container > .product_card > .product_title_details a
+{
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: #000;
+}
+.apparel > .product_container > .product_card > .product_img > a > img{
+    width: 100%;
+}
+.apparel > .product_container > .product_card > .product_title_details{
+    font-size: 17px;
+}
+.apparel > .product_container > .product_card > .product_title_details > a > h5{
+    font-size: 17px;
+    margin-top: 24px;
+}
+.apparel > .product_container > .product_card > .product_title_details > h5{
+    margin-top: 8px;
+}
+
+@media screen and (max-width:1300px) {
+    .apparel {
+        margin-top: 40px;
+        padding: 10px;
+    }
+    .apparel > .product_container > .product_card{
+        width: 30%;
+        margin-right: 15px;
+    }
+    .apparel > .product_container > .product_card > .product_img{
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+
+@media screen and (max-width:400px), (max-width:500px){
+    .apparel > .product_container > .product_card{
+        width: 43%;
+    }
+    .apparel > .product_container > .product_card > .product_title_details > a > h5 {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+}

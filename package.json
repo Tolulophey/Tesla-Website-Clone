@@ -1,5 +1,5 @@
 {
-  "name": "lesson1",
+  "name": "tesla-website-cloning",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,7 +17,6 @@
     "react": "^18.0.0",
     "react-bootstrap": "^2.3.1",
     "react-bootstrap-icons": "^1.10.2",
-    "react-chat-engine": "^1.11.23",
     "react-dom": "^18.0.0",
     "react-icons": "^4.6.0",
     "react-on-screen": "^2.1.1",

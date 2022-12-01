@@ -1,11 +1,25 @@
 import React from 'react'
 import { useState } from 'react';
 import { Link, useParams } from "react-router-dom";
-import data from "../MenApparel/MenData"
+import menWears from "../Apparel/wears/men"
+import womenWears from "../Apparel/wears/women"
+import kidWears from "../Apparel/wears/kids"
 import "./shopitem.css"
 
 function ShopItem() {
-    const { id } = useParams();
+    const { id, name } = useParams();
+    let data
+    switch (name) {
+      case "women-apparel":
+          data = womenWears
+          break;
+      case "kid-apparel":
+          data = kidWears
+          break;
+      default:
+          data = menWears
+          break
+    }
     const randomIndex = []
     let randomNumber = Math.floor(Math.random()*data.length)
     while(randomIndex.length < 3){
@@ -25,6 +39,7 @@ function ShopItem() {
             setQuantity(quantity-1)
         }
     }
+    
     return (
         <div className='shop_item'>
             <div className="shop_product">
@@ -64,12 +79,12 @@ function ShopItem() {
                     {randomIndex.map((random, index)=>{
                         return <div className="product_card" key={index+1}>
                                     <div className="product_img">
-                                        <Link to={`/shop/men-apparel/${data[random].id}`}>
+                                        <Link to={`/shop/${name}/${data[random].id}`}>
                                             <img src={data[random].image} alt={data[random].name}/>
                                         </Link>
                                     </div>
                                     <div className="product_title_details">
-                                        <Link to={`/shop/men-apparel/${data[random].id}`}>
+                                        <Link to={`/shop/${name}/${data[random].id}`}>
                                             <h5 className='item-name'>{data[random].name}</h5>
                                         </Link>
                                         <h5 className='item-price'>{data[random].price}</h5>
