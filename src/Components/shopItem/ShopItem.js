@@ -1,12 +1,17 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useContext} from 'react';
 import { Link, useParams } from "react-router-dom";
 import menWears from "../Apparel/wears/men"
 import womenWears from "../Apparel/wears/women"
 import kidWears from "../Apparel/wears/kids"
 import "./shopitem.css"
+import {CartContext} from "../../App"
 
 function ShopItem() {
+    const cartItem = useContext(CartContext);
+    // const {cart, setCart} = cartItem
+    const cart = cartItem.cart
+    const setCart = cartItem.setCart
     const { id, name } = useParams();
     let data
     switch (name) {
@@ -39,7 +44,21 @@ function ShopItem() {
             setQuantity(quantity-1)
         }
     }
-    
+    const addToCart = () => {
+        const exist = cart.find((wear) => wear.id === item.id && wear.apparel === name);
+        if(cart.length === 1 && cart[0].quantity === undefined){
+            setCart([{ ...item, apparel: name, quantity: quantity }])
+        } else if (exist) {
+        setCart(
+            cart.map((wear) =>
+            wear.id === item.id ? { ...exist, quantity: quantity} : item
+            )
+        )
+        } else {
+        setCart([...cart, { ...item, apparel: name, quantity: quantity }]);
+        }
+    }
+    console.log(cart)
     return (
         <div className='shop_item'>
             <div className="shop_product">
@@ -48,7 +67,7 @@ function ShopItem() {
                 </div>
                 <div className="right">
                     <h2>{item.name}</h2>
-                    <h3>{item.price}</h3>
+                    <h3>${item.price}</h3>
                     <div className="size">
                         <p>size</p>
                         <div className="sizes">
@@ -65,7 +84,10 @@ function ShopItem() {
                             <span onClick={increaseQuantity}>+</span>
                         </div>
                     </div>
-                    <button className="add">Add to Cart</button>
+                    <button 
+                    className="add"
+                    onClick={addToCart}
+                    >Add to Cart</button>
                     <div className="description">
                         <p>Description</p>
                         <p className='text'>{item.description}</p>
@@ -87,13 +109,14 @@ function ShopItem() {
                                         <Link to={`/shop/${name}/${data[random].id}`}>
                                             <h5 className='item-name'>{data[random].name}</h5>
                                         </Link>
-                                        <h5 className='item-price'>{data[random].price}</h5>
+                                        <h5 className='item-price'>${data[random].price}</h5>
                                     </div>
                                 </div>
                     })}
                 </div>
             </div>
         </div>
+
   )
 }
 
