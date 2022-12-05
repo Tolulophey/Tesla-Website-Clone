@@ -41,7 +41,9 @@ function ShopNavbar() {
           </ul>
         </div>
         <div className="buttons">
-            <BsCart2 className={navbar ? 'shop-cart active' : 'shop-cart'}/>
+            <Link to="/cart">
+              <BsCart2 className={navbar ? 'shop-cart active' : 'shop-cart'}/>
+            </Link>
             {/* <Link to="sign-in" className='account'>Account</Link> */}
             <Link to="/sign-in" className={navbar ? 'shoplogin active' : 'shoplogin'}> Logout</Link>
         </div>

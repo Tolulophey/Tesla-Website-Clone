@@ -40,7 +40,7 @@ const Apparel = () => {
                         <Link to={`/shop/${name}/${wear.id}`}>
                             <h5 className='item-name'>{wear.name}</h5>
                         </Link>
-                        <h5 className='item-price'>{wear.price}</h5>
+                        <h5 className='item-price'>${wear.price}</h5>
                     </div>
                 </div>
           )})}
