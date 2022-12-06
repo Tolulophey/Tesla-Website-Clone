@@ -1,61 +1,58 @@
-import React, {useState, useEffect} from 'react'
-import { useEffect } from 'react';
+import React, {useState, useEffect, useContext} from 'react'
+import menWears from "../../Components/Apparel/wears/men"
+import womenWears from "../../Components//Apparel/wears/women"
+import kidWears from "../../Components//Apparel/wears/kids"
 import './cart.css'
+import {CartContext} from "../../App"
 
-const Cart = ({cart, setCart, handleChange}) => {
+const Cart = () => {
+    const CartItem = useContext(CartContext);
     const [price, setPrice] = useState(0);
-
-    const handleRemove = (id) =>{
-        const arr = cart.filter((item) => item.id !== id);
-        setCart(arr);
-        handlePrice();
-    };
-
-    const handlePrice = () =>{
+    const {cart,setCart, handleChange, handleRemove} = CartItem;
+    useEffect(() => {
         let ans = 0;
-        cart.map((item) => (ans += item.amount * item.price));
+        if(cart[0].id !== undefined){
+            cart.map((item) => (ans += item.quantity * item.price));
+        }
         setPrice(ans);
-    };
-
-    const handleChange = (item, d) =>{
-        const ind = cart.indexOf(item);
-        const arr = cart;
-        arr[ind].amount += d;
-
-        if (arr[ind].amount === 0) arr[ind].amount = 1;
-        setCart([...arr]);
-    };
-
-
-
-    useEffect(() =>{
-        handlePrice();
-    });
-
-  return (
-    <article>
-        {cart.map((item)=>(
-            <div className="cart-box">
-                <div className="cart-img">
-                    <img src={item.img} alt="img"/>
-                    <p>{item.title}</p>
-                </div>
-                <div>
-                    <button onClick={() => handleChange(item, 1)}>+</button>
-                    <button>{item.amount}</button>
-                    <button onClick={() => handleChange(item, -1)}>-</button>
-                </div>
-                <div>
-                    <span>{item.price}</span>
-                    <button onClick={() => handleRemove(item.id)}>Remove</button>
+    }, [setCart,cart,handleRemove])
+    
+    return (
+        <article>
+            <h1>Cart</h1>
+            <div>
+                {cart[0].image === undefined  ? 
+                <p>Nothing in Cart</p> : 
+                cart.map((item, index)=>{
+                    return (
+                        <div className="cart-box" key={index+1}>
+                            <div className="cart-img">
+                                <img 
+                                src={item.apparel === "men-apparel"? menWears[item.id-1].image
+                                        : item.apparel === "women-apparel" ? womenWears[item.id-1].image
+                                            : kidWears[item.id-1].image} 
+                                alt="img"
+                                />
+                                <p>{item.name}</p>
+                            </div>
+                            <div>
+                                <button onClick={() => handleChange(item, 1)}>+</button>
+                                <button>${item.price}</button>
+                                <button onClick={() => handleChange(item, -1)}>-</button>
+                            </div>
+                            <div>
+                                <span>${item.price}</span>
+                                <button onClick={() => handleRemove(item.id)}>Remove</button>
+                            </div>
+                    </div>
+                    )}
+                )}
+                <div className="total">
+                    <span>Total Price of your Cart</span>
+                    <span> ${price}</span>
                 </div>
             </div>
-        ))}
-        <div className="total">
-            <span>Total Price of your Cart</span>
-            <span>$ - {price}</span>
-        </div>
-    </article>
+        </article>
   )
 }
 

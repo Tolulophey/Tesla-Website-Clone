@@ -18,11 +18,11 @@ function Navbar() {
     }
   }
   return (
-    <div class="navbar">
-        <div class="logo">
+    <div className="navbar">
+        <div className="logo">
             <img src={logo} alt="navbar_logo" className="site-logo"/>
         </div>
-        <div class="navbar-links">
+        <div className="navbar-links">
           <ul>
             <li>Model S</li>
             <li>Model 3</li>
@@ -32,7 +32,7 @@ function Navbar() {
             <li>Solar Panels</li>
           </ul>
         </div>
-        <div class="buttons">
+        <div className="buttons">
             <BsCart2 className='cart'/>
             <p 
             className='myAccount'
