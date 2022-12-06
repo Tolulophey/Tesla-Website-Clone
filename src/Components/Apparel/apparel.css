@@ -3,12 +3,19 @@
     padding: 0 48px;
     padding-top: 80px;
     width: 100%;
-    background-color: rgb(135, 135, 135);
-    margin-top: 60px;
-    margin-bottom: 23px;
+    background-color: rgb(218, 213, 213);
+    margin-top: 80px;
+    /* margin-bottom: 23px; */
 }
+
+.apparel > h1{
+    font-size: 30px;
+    padding-left:20px ;
+}
+
 .apparel > h3{
     font-size: 30px;
+    padding-left:20px ;
 }
 .product_container{
     display: flex;
@@ -53,7 +60,7 @@
 
 @media screen and (max-width:1300px) {
     .apparel {
-        margin-top: 40px;
+        margin-top: 80px;
         padding: 10px;
     }
     .apparel > .product_container > .product_card{
@@ -67,8 +74,18 @@
     }
 }
 
+@media screen and (max-width:900px) {
+    .apparel{
+        margin-top: 80px;
+    }
+}
+
 
 @media screen and (max-width:400px), (max-width:500px){
+
+    .apparel{
+        margin-top: 80px;
+    }
     .apparel > .product_container > .product_card{
         width: 43%;
     }

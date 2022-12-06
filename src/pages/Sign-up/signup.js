@@ -94,7 +94,7 @@ const SignUp = () => {
               onChange={(e) => setCPassword(e.target.value)} 
               // required
               />
-              <p className={passwordMatch ? "pass_match" : "pass_match false"}>passwords do not math</p>
+              <p className={passwordMatch ? "pass_match" : "pass_match false"}>passwords do not match</p>
 
               <p className='agreement'>By continuing, I understand and agree to Tesla's Privacy Notice and Terms of Use for creating a Tesla Account</p>
               <div className="submit">

@@ -25,13 +25,16 @@
 
 .shop.active{
     color:black;
+    display: none;
 }
+
+/* rgb(135, 135, 135) */
 
 .navbar {
     width:100%;
     /* overflow: hidden; */
-    /* background-color: #fff; */
-    /* height: 80px; */
+    /* background-color:  black;   */
+    height: 80px;
     display: flex;
     position:fixed;
     top: 0;
@@ -149,4 +152,153 @@
     text-decoration: none;
     color: white;
     cursor: pointer;
+}
+
+/* small screen */
+.navbar_smallscreen{
+    display:none;  
+}
+
+.smallscreen-overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background-color: black;
+   
+    flex-direction:column ;
+}
+
+.smallscreen-overlay.active{
+    opacity: 1;
+    transform: translateX(50%,50%);
+    transition:1.5s ease;
+}
+
+
+.overlay-close{
+    font-size: 27px;
+    color:orange;
+    cursor:pointer;
+    position:absolute;
+    top:20px;
+    right:20px;
+}
+
+.smallscreen-links{
+    list-style-type:none;
+    margin:50px;
+}
+
+.smallscreen-links li{
+    padding:32px;
+    cursor: pointer;
+    color:white;
+    font-size: 24px;
+    text-align: center;
+    
+}
+
+.smallscreen-links li:hover{
+    color:white;
+}
+
+.smallscreen-links li >a{
+    margin-left:10px;
+    text-decoration: none;
+    color:white;
+}
+
+.smallscreen-links li >a:hover{
+    color:orange;
+}
+
+@media screen and (max-width:1150px) {
+    .shopnavbar-links{
+        display:none;
+    }
+
+    .navbar_smallscreen{
+        display:flex;
+    }
+
+    .navbar.active{
+        display: none;
+        
+    }
+
+    .buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-left: 500px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .navbar_smallscreen{
+        display: block;
+        cursor: pointer; 
+        align-items:center ;
+    }
+
+    /* .navbar_logo >h1{
+        padding-left: 7px;
+        font-size:20px;
+    } */
+
+    /* .navbar{
+        position: fixed;
+    } */
+    
+}
+
+@media screen and (max-width:414px){
+
+    .navbar{
+        overflow-x: hidden;
+        position: fixed;
+    }
+    
+    .navbar.active{
+        display: none;
+        
+    }
+
+    .navbar_login > a {
+        padding: 0 4px;
+        font-size: 12px;
+    }
+
+    .navbar_logo > h1 {
+        width: 100px;
+        font-size: 15px;
+        padding-left: 5px;
+    }
+
+    /* .navbar.active{
+        display: none;
+        
+    } */
+
+    /* .navbar.active{
+        display: none;
+        
+    } */
+
+    
+
+
+
+    /* .shopnavbar-links{
+        display: none;
+        
+    } */
+
+    .navbar_smallscreen{
+        display:block;
+        cursor: pointer; 
+        align-items:center ;
+    }
 }
