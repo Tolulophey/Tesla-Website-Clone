@@ -41,3 +41,9 @@
     cursor: pointer;
     font-size: 14px;
 }
+
+@media screen and (max-width:300px) {
+    .sixthbanner > h1{
+        font-size: 30px;
+    }
+}

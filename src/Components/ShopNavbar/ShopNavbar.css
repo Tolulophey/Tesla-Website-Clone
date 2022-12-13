@@ -2,7 +2,7 @@
 .logo {
     display: flex;
     flex-direction: row;
-    width: 15%;
+    width: 25%;
     align-items: center;
     justify-content: center;
 }
@@ -25,7 +25,7 @@
 
 .shop.active{
     color:black;
-    display: none;
+    /* display: none; */
 }
 
 /* rgb(135, 135, 135) */
@@ -33,7 +33,7 @@
 .navbar {
     width:100%;
     /* overflow: hidden; */
-    /* background-color:  black;   */
+    background-color:  black;  
     height: 80px;
     display: flex;
     position:fixed;
@@ -53,19 +53,19 @@
 }
 
 .site-logo{
-    width:50%;
+    width:30%;
     cursor: pointer;
 }
 
 .site-logo2{
-    width:50%;
+    width:30%;
     cursor: pointer;
     display: none;
 }
 
 
 .site-logo2.active{
-    width:50%;
+    width:30%;
     display: block;
 }
 
@@ -74,7 +74,7 @@
 }
 
 .shopnavbar-links{
-    width:60%;
+    width:50%;
     display: flex;
     justify-content: center;
 }
@@ -295,6 +295,28 @@
         display: none;
         
     } */
+
+    .navbar_smallscreen{
+        display:block;
+        cursor: pointer; 
+        align-items:center ;
+    }
+}
+
+@media screen and (max-width:400px) {
+
+    .navbar{
+        width:100%;
+        padding: 0px;
+    }
+
+    .logo{
+        width:30%;
+    }
+    .site-logo{
+        width:100%;
+        padding-left: 40px;
+    }
 
     .navbar_smallscreen{
         display:block;
