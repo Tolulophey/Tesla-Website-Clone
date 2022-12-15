@@ -48,7 +48,7 @@ const Cart = () => {
 
                             <div className='price-change-button'>
                                 <button onClick={() => handleChange(item, 1)} className="increment">+</button>
-                                <button className='item-price'>${item.price}</button>
+                                <button className='item-price'>${item.price * item.quantity}</button>
                                 <button onClick={() => handleChange(item, -1)} className="decrement">-</button>
                             </div>
                             <div>

@@ -154,7 +154,7 @@
     color: white;
     cursor: pointer;
 }
-.cart{
+.buttons .cart{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -166,7 +166,7 @@
     height: 80px;
     /* border-radius: 50%; */
 }
-.cart p{
+.buttons .cart p{
     display: none;
     justify-content: center;
     align-items: center;
@@ -179,11 +179,11 @@
     bottom: 12px;
     right: 10px;
 }
-.cart.active{
+.buttons .cart.active{
     text-decoration: none;
     color: white;
 }
-.cart.active p{
+.buttons .cart.active p{
     display: flex;
 }
 
