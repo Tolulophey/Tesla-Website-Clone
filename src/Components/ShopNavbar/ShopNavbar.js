@@ -1,14 +1,17 @@
-import React,{useState} from 'react'
+import React,{useState, useContext} from 'react'
 import './ShopNavbar.css'
 import logo2 from '../../assets/tesla-logo-png-201.png'
 import logo from '../../assets/tesla-logo-png-20.png'
 import {BsCart2} from 'react-icons/bs'
 import {Link} from "react-router-dom"
 // import { SlArrowDown } from "react-icons/sl";
+import {CartContext} from "../../App"
+
 
 
 function ShopNavbar() {
-
+  const cartItem = useContext(CartContext);
+  const cart = cartItem.cart
   // const [toggleMenu, setToggleMenu] = useState(false);
   const [navbar, setNabvar] = useState(false);
   
@@ -41,8 +44,12 @@ function ShopNavbar() {
           </ul>
         </div>
         <div className="buttons">
-            <Link to="/cart">
+            <Link 
+            to="/cart" 
+            className={cart.length >= 1 && cart[0] !== {} ? 'cart active' : 'cart'}
+            >
               <BsCart2 className={navbar ? 'shop-cart active' : 'shop-cart'}/>
+              <p>{cart.length}</p>
             </Link>
             {/* <Link to="sign-in" className='account'>Account</Link> */}
             <Link to="/sign-in" className={navbar ? 'shoplogin active' : 'shoplogin'}> Logout</Link>

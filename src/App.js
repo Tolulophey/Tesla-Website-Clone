@@ -46,14 +46,14 @@ function App() {
           <Routes>
               <Route path="/shop/:name/:id" element={<ShopItemPage />}/>
               <Route path="/cart" element={<Cart />}/>
+              <Route path="/shop" element={<Shop />}/>
+              <Route path="/shop/:name" element={<ApparelPage />}/>
           </Routes>
         </CartContext.Provider>
         <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="/sign-in" element={<SignIn />}/>
             <Route path="/sign-up" element={<SignUp />}/>
-            <Route path="/shop" element={<Shop />}/>
-            <Route path="/shop/:name" element={<ApparelPage />}/>
         </Routes>
       </Router>
   </div>
