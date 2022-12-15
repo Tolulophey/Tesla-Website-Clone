@@ -30,3 +30,9 @@
     font-size: 14px;
     color:black;
 }
+
+@media screen and (max-width:300px) {
+    .fifthbanner >h1{
+        font-size: 30px;
+    }
+}

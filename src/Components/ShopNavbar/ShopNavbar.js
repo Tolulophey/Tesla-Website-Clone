@@ -2,6 +2,8 @@ import React,{useState, useContext} from 'react'
 import './ShopNavbar.css'
 import logo2 from '../../assets/tesla-logo-png-201.png'
 import logo from '../../assets/tesla-logo-png-20.png'
+import {GiHamburgerMenu} from 'react-icons/gi';
+import {AiOutlineClose} from 'react-icons/ai';
 import {BsCart2} from 'react-icons/bs'
 import {Link} from "react-router-dom"
 // import { SlArrowDown } from "react-icons/sl";
@@ -12,8 +14,10 @@ import {CartContext} from "../../App"
 function ShopNavbar() {
   const cartItem = useContext(CartContext);
   const cart = cartItem.cart
-  // const [toggleMenu, setToggleMenu] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(false);
   const [navbar, setNabvar] = useState(false);
+
+  const showMenu = () => setToggleMenu(!toggleMenu)
   
 
   // const showMenu = () => setToggleMenu(!toggleMenu)
@@ -54,6 +58,25 @@ function ShopNavbar() {
             {/* <Link to="sign-in" className='account'>Account</Link> */}
             <Link to="/sign-in" className={navbar ? 'shoplogin active' : 'shoplogin'}> Logout</Link>
         </div>
+
+        <div className={navbar ? 'navbar_smallscreen active' : 'navbar_smallscreen'}>
+        <GiHamburgerMenu cursor="pointer" color="#fff" fontSize={27}  onClick={showMenu} className="hamburger"/>
+        {
+        toggleMenu && (
+        <div className="smallscreen-overlay">
+          <AiOutlineClose color="#fff" cursor="pointer" fontSize={27} className="overlay-close" onClick={showMenu}/>
+          <ul className='smallscreen-links' onClick={showMenu}>
+            <li className='opensans'><a href="#home">Charging</a></li>
+            <li className='opensans'><a href="#about">Vehicle Accessories</a></li>
+            <li className='opensans'><a href="#menu">Apparel</a></li>
+            <li className='opensans'><a href="#gallery">Lifestyle</a></li>
+            <li className='opensans'><a href="#contact">Contact</a></li>
+            
+        </ul>
+        </div>
+        )}
+        
+      </div>
     </div>
   )
 }

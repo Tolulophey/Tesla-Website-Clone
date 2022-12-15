@@ -5,6 +5,8 @@ import womenWears from "../../Components//Apparel/wears/women"
 import kidWears from "../../Components//Apparel/wears/kids"
 import './cart.css'
 import {CartContext} from "../../App"
+import ShopNavbar from '../../Components/ShopNavbar/ShopNavbar'
+import Footer from '../../Components/Footer/Footer'
 
 const Cart = () => {
     const CartItem = useContext(CartContext);
@@ -24,7 +26,10 @@ const Cart = () => {
     
     return (
         <article>
-            <h1>Cart</h1>
+            <ShopNavbar/>
+            <div className='cart-title'>
+             <h1>Cart</h1>
+            </div>
             <div>
                 {myCart[0] === [{}] || myCart[0] === undefined  ? 
                 <p>Nothing in Cart</p> : 
@@ -40,13 +45,14 @@ const Cart = () => {
                                 />
                                 <p>{item.name}</p>
                             </div>
-                            <div>
-                                <button onClick={() => handleChange(item, 1)}>+</button>
-                                <button>${item.price * item.quantity}</button>
-                                <button onClick={() => handleChange(item, -1)}>-</button>
+
+                            <div className='price-change-button'>
+                                <button onClick={() => handleChange(item, 1)} className="increment">+</button>
+                                <button className='item-price'>${item.price}</button>
+                                <button onClick={() => handleChange(item, -1)} className="decrement">-</button>
                             </div>
                             <div>
-                                <span>${item.price}</span>
+                                <span className='total-price'>${item.price}</span>
                                 <button onClick={() => handleRemove(item.id)}>Remove</button>
                             </div>
                     </div>
@@ -57,7 +63,9 @@ const Cart = () => {
                     <span> ${price}</span>
                 </div>
             </div>
+            <Footer/>
         </article>
+       
   )
 }
 

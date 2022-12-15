@@ -58,3 +58,17 @@
     }
   } */
   
+
+  @media screen and (max-width:300px), (max-width:400px), (max-width:500px) {
+    .shop-banner-info > h1{
+        font-size: 25px;
+    }
+
+    .shop-banner-info > p{
+        font-size: 15px;
+    }
+
+    .shop-banner-info > button{
+        width:200px;
+    }
+}

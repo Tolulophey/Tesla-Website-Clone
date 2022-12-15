@@ -3,12 +3,21 @@
     padding: 0 48px;
     padding-top: 80px;
     width: 100%;
-    background-color: rgb(135, 135, 135);
-    margin-top: 60px;
-    margin-bottom: 23px;
+    background-color: white;
+    margin-top: 80px;
+    /* margin-bottom: 23px; */
 }
+
+.apparel > h1{
+    font-size: 30px;
+    padding-left:20px ;
+    font-family: 'Montserrat', sans-serif;
+}
+
 .apparel > h3{
     font-size: 30px;
+    padding-left:20px ;
+    font-family: 'Montserrat', sans-serif;
 }
 .product_container{
     display: flex;
@@ -46,14 +55,16 @@
 .apparel > .product_container > .product_card > .product_title_details > a > h5{
     font-size: 17px;
     margin-top: 24px;
+    font-family: 'Montserrat', sans-serif;
 }
 .apparel > .product_container > .product_card > .product_title_details > h5{
     margin-top: 8px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 @media screen and (max-width:1300px) {
     .apparel {
-        margin-top: 40px;
+        margin-top: 80px;
         padding: 10px;
     }
     .apparel > .product_container > .product_card{
@@ -67,8 +78,18 @@
     }
 }
 
+@media screen and (max-width:900px) {
+    .apparel{
+        margin-top: 80px;
+    }
+}
+
 
 @media screen and (max-width:400px), (max-width:500px){
+
+    .apparel{
+        margin-top: 80px;
+    }
     .apparel > .product_container > .product_card{
         width: 43%;
     }

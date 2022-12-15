@@ -17,7 +17,7 @@
 .banner-info> h1{
     font-family: 'Montserrat', sans-serif;
     color:black;
-    margin-top:120px;
+    margin-top:60px;
     font-size: 40px;
 }
 
@@ -46,8 +46,8 @@
     }
   } */
 
-  @media screen and (max-width:300px), (max-width:400px), (max-width:600px) {
-    .Banner{
-        width:100%;
+@media screen and (max-width:400px) {
+    .banner-info{
+        margin:0px;
     }
-  }
+}
