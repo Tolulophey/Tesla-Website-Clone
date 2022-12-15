@@ -41,3 +41,13 @@
     margin-top: 40px;
     cursor: pointer;
 }
+
+@media screen and (max-width:300px), (max-width:400px), (max-width:500px) {
+    .eighthbanner > h1{
+        font-size: 25px;
+    }
+
+    .eighthbanner > button{
+        width:200px;
+    }
+}

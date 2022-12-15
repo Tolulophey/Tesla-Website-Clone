@@ -143,6 +143,11 @@ form > input{
         justify-content: flex-start;
         padding-left: 30px;
     }
+
+    .signup-logo > img{
+        width:60%;
+        margin-bottom: 20px;
+    }
 }
 
 @media screen and (max-width:1100px), (max-width:1300px) {
@@ -154,6 +159,7 @@ form > input{
         width:40%;
         justify-content: flex-start;
         padding-left: 30px;
+        margin: 30px 0px;
     }
 
     /* .password > a{
@@ -184,6 +190,11 @@ form > input{
         width:100%;
         justify-content: flex-start;
         padding-left: 30px;
+        margin:30px 0px;
+    }
+
+    .signup-logo > img{
+        width:50%;
     }
 
      /* .password > a{

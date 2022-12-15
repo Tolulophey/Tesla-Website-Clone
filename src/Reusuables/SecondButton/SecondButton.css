@@ -22,3 +22,15 @@
     margin-right: 15px;
     cursor: pointer;
 }
+
+@media screen and (max-width:400px),(max-width:500px) {
+    .second-customOrder{
+        margin-bottom:10px ;
+    }
+}
+
+@media screen and (max-width:300px) {
+    .second-customOrder,.second-Existing{
+        width:200px;
+    }
+}

@@ -4,7 +4,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 390px;
+    margin-top: 350px;
     /* margin-top: 80px; */
 }
 
@@ -36,6 +36,72 @@
     cursor: pointer;
 }
 
+/* @media screen and (max-width:500px) {
+    .FirstButton{
+        display: flex;
+        flex-direction: column;
+        margin-top: 470px;
+    }
+
+    .customOrder{
+        margin-right:0px;
+        margin-bottom: 10px;
+    }
+} */
+
+
+
+/* @media screen and (max-width:600px) {
+    .FirstButton{
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+    }
+} */
+
+@media screen and (max-width:1300px) {
+    .FirstButton{
+        /* display: flex; */
+        margin-top: 450px;
+    } 
+}
+
+@media screen and (max-width:1200px) {
+    .FirstButton{
+        /* display: flex; */
+        margin-top: 250px;
+    } 
+}
+
+
+
+@media screen and (max-width:1000px) {
+    .FirstButton{
+        /* display: flex; */
+        margin-top: 800px;
+    } 
+}
+
+@media screen and (max-width:900px) {
+    .FirstButton{
+        /* display: flex; */
+        margin-top: 700px;
+    } 
+}
+
+@media screen and (max-width:600px) {
+    .FirstButton{
+        display: flex;
+        flex-direction: column;
+        margin-top: 370px;
+    }
+
+    .customOrder{
+        margin-right:0px;
+        margin-bottom: 10px;
+    }
+}
+
 @media screen and (max-width:500px) {
     .FirstButton{
         display: flex;
@@ -56,55 +122,21 @@
         margin-top: 300px;
     }
 
-    .customOrder{
-        margin-right:0px;
-        margin-bottom: 10px;
+}
+
+@media screen and (max-width:300px) {
+    .customOrder,.Existing{
+        width:200px;
     }
 }
 
-@media screen and (max-width:600px) {
+/* @media screen and (max-width:390px) {
     .FirstButton{
         display: flex;
         flex-direction: column;
-        margin-top: 0px;
-    }
-
-    .customOrder{
-        margin-right:0px;
-        margin-bottom: 10px;
-    }
-}
-
-@media screen and (max-width:900px) {
-    .FirstButton{
-        /* display: flex; */
-        margin-top: 800px;
-    } 
-}
-
-@media screen and (max-width:800px) {
-    .FirstButton{
-        /* display: flex; */
-        margin-top: 700px;
-    } 
-}
-
-@media screen and (max-width:1000px) {
-    .FirstButton{
-        /* display: flex; */
-        margin-top: 1000px;
-    } 
-}
-
-/* @media screen and (max-width:800px) {
-    .customOrder{
-        margin-top: 700px;
+        margin-top: 500px;
     }
 } */
 
-/* @media screen and (max-width:900px) {
-    .customOrder{
-        margin-top: 800px;
-    }
-} */
+
 
