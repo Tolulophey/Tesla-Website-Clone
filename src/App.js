@@ -13,15 +13,19 @@ import Cart from './pages/Cart/cart'
 
 export const CartContext = React.createContext()
 function App() {
-  const [cart, setCart] = useState([{}]);
+  if(!localStorage.getItem("authenticated")){
+      localStorage.setItem("cart", JSON.stringify([{}]))
+  }
+  const [cart, setCart] = useState((JSON.parse(localStorage.getItem("cart"))) || [{}]);
+  localStorage.setItem("cart", JSON.stringify(cart))
+  const myCart = JSON.parse(localStorage.getItem("cart"))
   const handleRemove = (id) =>{
-      const arr = cart.filter((item) => item.id !== id);
+      const arr = myCart.filter((item) => item.id !== id);
       setCart(arr);
   };
-
   const handleChange = (item, d) =>{
-      const ind = cart.indexOf(item);
-      const arr = cart;
+      const ind = myCart.indexOf(item);
+      const arr = myCart;
       arr[ind].quantity += d;
 
       if (arr[ind].quantity === 0) arr[ind].quantity = 1;
@@ -33,6 +37,7 @@ function App() {
         <ScrollToTop />
         <CartContext.Provider value={{
                   cart: cart, 
+                  myCart: myCart, 
                   setCart: setCart, 
                   handleChange: handleChange,
                   handleRemove: handleRemove
