@@ -31,11 +31,14 @@ const SignUp = () => {
  
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const user = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password
+    }
     if(passwordMatch && password !== ""){
-      await localStorage.setItem("firstName", firstName)
-      await localStorage.setItem("lastName", lastName)
-      await localStorage.setItem("email", email)
-      await localStorage.setItem("password", password)
+      await localStorage.setItem("user", JSON.stringify(user))
       await localStorage.setItem("authenticated", true)
       setAuthenticated(true)
       navigate("/shop")

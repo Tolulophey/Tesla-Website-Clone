@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react'
 import menWears from "../../Components/Apparel/wears/men"
+import { useNavigate } from 'react-router-dom'
 import womenWears from "../../Components//Apparel/wears/women"
 import kidWears from "../../Components//Apparel/wears/kids"
 import './cart.css'
@@ -9,15 +10,19 @@ import Footer from '../../Components/Footer/Footer'
 
 const Cart = () => {
     const CartItem = useContext(CartContext);
+    const navigate = useNavigate();
     const [price, setPrice] = useState(0);
-    const {cart,setCart, handleChange, handleRemove} = CartItem;
+    const {myCart, handleChange, handleRemove} = CartItem;
     useEffect(() => {
+        if(!localStorage.getItem("authenticated")){
+        navigate("/shop")
+        }
         let ans = 0;
-        if(cart[0].id !== undefined){
-            cart.map((item) => (ans += item.quantity * item.price));
+        if(myCart[0] !== [{}] || myCart[0] !== undefined){
+            myCart.map((item) => (ans += item.quantity * item.price));
         }
         setPrice(ans);
-    }, [setCart,cart,handleRemove])
+    }, [myCart,handleRemove, navigate])
     
     return (
         <article>
@@ -26,9 +31,9 @@ const Cart = () => {
              <h1>Cart</h1>
             </div>
             <div>
-                {cart[0].image === undefined  ? 
+                {myCart[0] === [{}] || myCart[0] === undefined  ? 
                 <p>Nothing in Cart</p> : 
-                cart.map((item, index)=>{
+                myCart.map((item, index)=>{
                     return (
                         <div className="cart-box" key={index+1}>
                             <div className="cart-img">
@@ -40,6 +45,7 @@ const Cart = () => {
                                 />
                                 <p>{item.name}</p>
                             </div>
+
                             <div className='price-change-button'>
                                 <button onClick={() => handleChange(item, 1)} className="increment">+</button>
                                 <button className='item-price'>${item.price}</button>

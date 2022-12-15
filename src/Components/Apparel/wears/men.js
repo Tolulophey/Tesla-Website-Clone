@@ -107,7 +107,7 @@ const wears = [
         price: 50,
         description: "Inspired by the Tesla Cyber Rodeo event, the Cyber Rodeo Tee marks the opening of Gigafactory Texas and our new global headquarters. Designed for fit, comfort and style, this tee features the event’s signature signage in a vintage Texas neon style. Made from 95% cotton and 5% elastane.",
         link: "https://www.tesla.com/support/shop?redirect=no#merchandise-size-fit"
-    },
+    }
 ]
 
 export default wears

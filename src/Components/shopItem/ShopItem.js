@@ -1,6 +1,6 @@
 import React from 'react'
-import { useState, useContext} from 'react';
-import { Link, useParams } from "react-router-dom";
+import { useState, useEffect, useContext} from 'react';
+import { Link, useParams , useNavigate} from "react-router-dom";
 import menWears from "../Apparel/wears/men"
 import womenWears from "../Apparel/wears/women"
 import kidWears from "../Apparel/wears/kids"
@@ -18,13 +18,19 @@ function ShopItem() {
       case "women-apparel":
           data = womenWears
           break;
-      case "kid-apparel":
+      case "kids-apparel":
           data = kidWears
           break;
       default:
           data = menWears
           break
     }
+    const navigate = useNavigate();
+    useEffect(() => {
+        if(!localStorage.getItem("authenticated")){
+        navigate("/shop")
+        }
+    }, [navigate])
     const randomIndex = []
     let randomNumber = Math.floor(Math.random()*data.length)
     while(randomIndex.length < 3){
@@ -57,7 +63,9 @@ function ShopItem() {
         } else {
         setCart([...cart, { ...item, apparel: name, quantity: quantity }]);
         }
+        localStorage.setItem("cart", JSON.stringify(cart))
     }
+    console.log(JSON.parse(localStorage.getItem("cart")))
     console.log(cart)
     return (
         <div className='shop_item'>
