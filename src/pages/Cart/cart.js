@@ -13,16 +13,18 @@ const Cart = () => {
     const navigate = useNavigate();
     const [price, setPrice] = useState(0);
     const {myCart, handleChange, handleRemove} = CartItem;
-    useEffect(() => {
+    useEffect(()=>{
         if(!localStorage.getItem("authenticated")){
-        navigate("/shop")
+             navigate("/sign-in")
         }
+    }, [navigate])
+    useEffect(() => {
         let ans = 0;
         if(myCart[0] !== [{}] || myCart[0] !== undefined){
             myCart.map((item) => (ans += item.quantity * item.price));
         }
         setPrice(ans);
-    }, [myCart,handleRemove, navigate])
+    }, [myCart,handleRemove])
     
     return (
         <article>

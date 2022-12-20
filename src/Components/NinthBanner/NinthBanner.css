@@ -21,9 +21,10 @@
     
 }
 
-.product-images{
-    width:100%;
-    height:100vh;
+.product-images {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
 }
 
 .card-text{

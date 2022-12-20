@@ -1,4 +1,4 @@
-import React,{useState, useContext} from 'react'
+import React,{useState, useContext, useEffect} from 'react'
 import './ShopNavbar.css'
 import logo2 from '../../assets/tesla-logo-png-201.png'
 import logo from '../../assets/tesla-logo-png-20.png'
@@ -22,15 +22,29 @@ function ShopNavbar() {
 
   // const showMenu = () => setToggleMenu(!toggleMenu)
 
-  const changeBackground =() =>{
-    if(window.scrollY >=1){
+  var lastScroll = 0
+  const changeBackground =(e) =>{
+    var currentScroll = window.scrollY
+    // var currentScroll = e.clientY
+    console.log(lastScroll, currentScroll)
+    if(currentScroll > lastScroll){
       setNabvar(true)
-    }else{
+    } else if(currentScroll < lastScroll){
+      setNabvar(true)
+    }
+    else{
       setNabvar(false);
     }
+    lastScroll = currentScroll
   }
+  useEffect(() => {
+    window.addEventListener('scroll', changeBackground);
+    return () => {
+      window.removeEventListener('scroll', changeBackground);
+    }
+  }, [navbar])
 
-  window.addEventListener('scroll', changeBackground);
+  // window.addEventListener('scroll', changeBackground);
   return (
     <div class={navbar ? 'navbar active' : 'navbar'}>
         <div className="logo">

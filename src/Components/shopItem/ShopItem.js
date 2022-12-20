@@ -52,7 +52,7 @@ function ShopItem() {
     }
     const addToCart = () => {
         const exist = cart.find((wear) => wear.id === item.id && wear.apparel === name);
-        if(cart.length === 1 && cart[0].quantity === undefined){
+        if(cart.length === 1 && cart[0].quantity === {}){
             setCart([{ ...item, apparel: name, quantity: quantity }])
         } else if (exist) {
         setCart(
