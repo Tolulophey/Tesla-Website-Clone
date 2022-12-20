@@ -22,20 +22,13 @@ function ShopNavbar() {
 
   // const showMenu = () => setToggleMenu(!toggleMenu)
 
-  var lastScroll = 0
   const changeBackground =(e) =>{
     var currentScroll = window.scrollY
-    // var currentScroll = e.clientY
-    console.log(lastScroll, currentScroll)
-    if(currentScroll > lastScroll){
-      setNabvar(true)
-    } else if(currentScroll < lastScroll){
-      setNabvar(true)
-    }
-    else{
+    if(currentScroll > 0){
+        setNabvar(true)
+    } else{
       setNabvar(false);
     }
-    lastScroll = currentScroll
   }
   useEffect(() => {
     window.addEventListener('scroll', changeBackground);
@@ -43,13 +36,11 @@ function ShopNavbar() {
       window.removeEventListener('scroll', changeBackground);
     }
   }, [navbar])
-
-  // window.addEventListener('scroll', changeBackground);
   return (
     <div class={navbar ? 'navbar active' : 'navbar'}>
         <div className="logo">
-            <img src={logo2} alt="navbar_logo" className="site-logo"/>
-            <img src={logo} alt="navbar_logo" className={navbar ? 'site-logo2 active' : 'site-logo2'}/>
+            <img src={logo} alt="navbar_logo" className='site-logo'/>
+            <img src={logo2} alt="navbar_logo" className="site-logo2"/>
             <div className={navbar ? 'divide active' : 'divide'}></div>
             <p className={navbar ? 'shop active' : 'shop'}>Shop</p>
         </div>

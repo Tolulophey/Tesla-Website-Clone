@@ -1,4 +1,3 @@
-
 .logo {
     display: flex;
     flex-direction: row;
@@ -8,36 +7,35 @@
 }
 
 .divide{
-    width:1px;
+    width:2px;
     height:30px;
-    background-color: white;
+    background-color: #000;
     margin:0px 15px;
 }
 
 .divide.active{
-    background-color: black;
+    background-color: #fff;
 }
 
 .shop{
-    color: white;
+    color: black;
     font-family: 'Montserrat', sans-serif;
 }
 
 .shop.active{
-    color:black;
-    /* display: none; */
+    color: white;
 }
 
-/* rgb(135, 135, 135) */
+
 
 .navbar {
     width:100%;
     /* overflow: hidden; */
-    background-color:  black;  
     height: 80px;
     display: flex;
     position:fixed;
-    color: #fff;
+    background-color:  transparent;  
+    color: black;
     top: 0;
     z-index:3000;
     /* flex-direction: row; */
@@ -49,30 +47,29 @@
 }
 
 .navbar.active{
-    background-color: white;
-    color:black;
+    background-color: black;
+    color:white;
 }
 
-.site-logo{
+.navbar .site-logo{
     width:30%;
     cursor: pointer;
+    display: block;
 }
 
-.site-logo2{
+.navbar .site-logo2{
     width:30%;
     cursor: pointer;
     display: none;
 }
+.navbar.active .site-logo{
+    display: none;
+}
 
-
-.site-logo2.active{
-    width:30%;
+.navbar.active .site-logo2{
     display: block;
 }
 
-.site-logo.active{
-    content:'url(public/tesla-logo-png-201.png)';
-}
 
 .shopnavbar-links{
     width:50%;
@@ -89,12 +86,12 @@
 .shopnavbar-links >ul > li{
     font-family: 'Montserrat', sans-serif;
     margin-right:20px;
-    color:white;
+    color: black;
     cursor: pointer;
 }
 
 .shopnavbar-links.active >ul > li{
-    color:black;
+    color: white;
 }
 
 .shopnavbar-links > ul > li :hover{
@@ -115,7 +112,7 @@
 
 .shoplogin {
     width: 80px;
-    color: white;
+    color: #000;
     /* height: 40px; */
     margin-right: 20px;
     /* background-color: white; */
@@ -133,11 +130,11 @@
 }
 
 .shoplogin.active{
-    color: black;
+    color: #fff;
 }
 
 .shop-cart{
-    color: white;
+    color: black;
     cursor:pointer;
     font-size: 40px;
     /* margin-right: 25px; */
@@ -145,7 +142,7 @@
 }
 
 .shop-cart.active{
-    color: black;
+    color: #fff;
 }
 
 .account{
@@ -161,12 +158,12 @@
     position: relative;
     text-decoration: none;
     background-color: transparent;
-    color: white;
+    color: #000;
     width: 80px;
     height: 80px;
     /* border-radius: 50%; */
 }
-.buttons .cart p{
+.navbar .buttons .cart p{
     display: none;
     justify-content: center;
     align-items: center;
@@ -174,14 +171,19 @@
     height: 25px;
     font-size: 12px;
     background-color: black;
+    color: #fff;
     border-radius: 50%;
     position: absolute;
     bottom: 12px;
     right: 10px;
 }
+.navbar.active .buttons .cart p{
+    background-color: white;
+    color: black;
+}
 .buttons .cart.active{
     text-decoration: none;
-    color: white;
+    color: #000;
 }
 .buttons .cart.active p{
     display: flex;
