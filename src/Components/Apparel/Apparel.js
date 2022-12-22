@@ -23,7 +23,7 @@ const Apparel = () => {
     }
     useEffect(() => {
         if(!localStorage.getItem("authenticated")){
-        navigate("/shop")
+        navigate("/sign-in")
         }
     }, [navigate])
     return (

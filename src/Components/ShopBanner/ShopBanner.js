@@ -1,12 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import ShopNavbar from '../ShopNavbar/ShopNavbar'
 import './ShopBanner.css'
+import {NavContext} from "../../App"
 // import {BsChevronDown} from 'react-icons/bs'
 // import SecondButton from '../../Reusuables/SecondButton/Button'
 // import {motion} from 'framer-motion'
 
 function Banner() {
-
+  const {navbar,setNavbar} = useContext(NavContext);
   // const [banner, setBanner] = useState (false);
 
   // const fadeTitle = () =>{
@@ -16,12 +17,18 @@ function Banner() {
   //     setBanner(false);
   //   }
   // }
+  const changeBackground =() =>{
+    if(!navbar){
+      setNavbar(true)
+    }
+  }
 
+  
   // window.addEventListener('scroll', fadeTitle);
 
   return (
-    <div className='Shopbanner'>
-       <ShopNavbar/>
+    <div className='Shopbanner' onload={setNavbar(true)}>
+       <ShopNavbar navbar={navbar} changeBackground = {changeBackground}/>
        <div className="shop-banner-info">
             <h1>Wall Connector</h1>
             <p>The most convienient way to charge at home</p>

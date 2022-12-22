@@ -12,7 +12,9 @@ import Cart from './pages/Cart/cart'
 
 
 export const CartContext = React.createContext()
+export const NavContext = React.createContext()
 function App() {
+  const [navbar, setNavbar] = useState(false);
   if(!localStorage.getItem("authenticated")){
       localStorage.setItem("cart", JSON.stringify([{}]))
   }
@@ -42,13 +44,15 @@ function App() {
                   handleChange: handleChange,
                   handleRemove: handleRemove
                 }}
-            >
+        >
+        <NavContext.Provider value={{navbar: navbar, setNavbar: setNavbar}}>
           <Routes>
               <Route path="/shop/:name/:id" element={<ShopItemPage />}/>
               <Route path="/cart" element={<Cart />}/>
               <Route path="/shop" element={<Shop />}/>
               <Route path="/shop/:name" element={<ApparelPage />}/>
           </Routes>
+        </NavContext.Provider>
         </CartContext.Provider>
         <Routes>
             <Route path="/" element={<Home />}/>

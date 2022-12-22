@@ -7,12 +7,35 @@ import './cart.css'
 import {CartContext} from "../../App"
 import ShopNavbar from '../../Components/ShopNavbar/ShopNavbar'
 import Footer from '../../Components/Footer/Footer'
+import {NavContext} from "../../App"
 
 const Cart = () => {
     const CartItem = useContext(CartContext);
     const navigate = useNavigate();
     const [price, setPrice] = useState(0);
     const {myCart, handleChange, handleRemove} = CartItem;
+    const {navbar,setNavbar} = useContext(NavContext);
+    const changeBackground =() =>{
+        if(window.scrollY > 0){
+            setNavbar(true)
+        } else{
+        setNavbar(false);
+        }
+        console.log(window.scrollY)
+    }
+  useEffect(() => {
+    window.addEventListener("load", ()=>{
+      if(!navbar){
+        setNavbar(true)
+      }
+    })
+    return () => {
+      window.removeEventListener("load", ()=>{
+      if(!navbar){
+        setNavbar(true)
+      }
+    })}
+  }, [navbar,setNavbar])
     useEffect(()=>{
         if(!localStorage.getItem("authenticated")){
              navigate("/sign-in")
@@ -20,7 +43,7 @@ const Cart = () => {
     }, [navigate])
     useEffect(() => {
         let ans = 0;
-        if(myCart[0] !== [{}] || myCart[0] !== undefined){
+        if(myCart[0] !== {} || myCart[0] !== undefined){
             myCart.map((item) => (ans += item.quantity * item.price));
         }
         setPrice(ans);
@@ -28,12 +51,12 @@ const Cart = () => {
     
     return (
         <article>
-            <ShopNavbar/>
+            <ShopNavbar navbar={navbar} changeBackground = {changeBackground}/>
             <div className='cart-title'>
              <h1>Cart</h1>
             </div>
             <div>
-                {myCart[0] === [{}] || myCart[0] === undefined  ? 
+                {myCart[0] === {} || myCart[0] === undefined  ? 
                 <p>Nothing in Cart</p> : 
                 myCart.map((item, index)=>{
                     return (

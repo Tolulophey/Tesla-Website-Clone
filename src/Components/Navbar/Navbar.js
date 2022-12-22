@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './Navbar.css'
 import logo from '../../assets/tesla-logo-png-20.png'
 import {GiHamburgerMenu} from 'react-icons/gi';
@@ -12,21 +12,6 @@ function Navbar() {
 
   const [toggleMenu, setToggleMenu] = useState(false);
   const [navbar, setNabvar] = useState(false);
-  
-
-  const showMenu = () => setToggleMenu(!toggleMenu)
-
-  const changeBackground =() =>{
-    if(window.scrollY >=1){
-      setNabvar(true)
-    }else{
-      setNabvar(false);
-    }
-  }
-
-  window.addEventListener('scroll', changeBackground);
-
-
   const navigate = useNavigate()
   const handleRoute = ()=>{
     if(localStorage.getItem("authenticated")){
@@ -35,6 +20,28 @@ function Navbar() {
       navigate("/sign-in")
     }
   }
+  const changeBackground =() =>{
+    if(window.scrollY > 0){
+        setNabvar(true)
+    } else{
+      setNabvar(false);
+    }
+  }
+  useEffect(()=>{
+    if(toggleMenu){
+      document.querySelector("body").style.overflow = "hidden"
+    }
+    return ()=> {
+      document.querySelector("body").style.overflow = "auto"
+    }
+  }, [toggleMenu])
+  useEffect(() => {
+    window.addEventListener('scroll', changeBackground);
+    return () => {
+      window.removeEventListener('scroll', changeBackground);
+    }
+  }, [navbar])
+
   return (
     <div className={navbar ? 'home-navbar active' : 'home-navbar'}>
         <div className="home-logo">
@@ -60,20 +67,18 @@ function Navbar() {
         </div>
 
         <div className={navbar ? 'navbar_smallscreen active' : 'navbar_smallscreen'}>
-        <GiHamburgerMenu cursor="pointer" color="black" fontSize={27}  onClick={showMenu} className="hamburger"/>
+        <GiHamburgerMenu cursor="pointer" color="black" fontSize={27} onClick={()=>setToggleMenu(true)}  className="hamburger"/>
         {
         toggleMenu && (
         <div className="smallscreen-overlay">
-          <AiOutlineClose color="#fff" cursor="pointer" fontSize={27} className="overlay-close" onClick={showMenu}/>
-          <ul className='smallscreen-links' onClick={showMenu}>
+          <AiOutlineClose color="#fff" cursor="pointer" fontSize={27} className="overlay-close" onClick={()=>setToggleMenu(false)}/>
+          <ul className='smallscreen-links' onClick={()=>setToggleMenu(false)}>
             <li className='opensans'><a href="#home">Model S</a></li>
             <li className='opensans'><a href="#about">Model 3</a></li>
             <li className='opensans'><a href="#menu">Model X</a></li>
             <li className='opensans'><a href="#contact">Solar Roof</a></li>
             <li className='opensans'><a href="#contact">Solar Panels</a></li>
             <li className='opensans'><a href="#gallery">Account</a></li>
-            <li className='opensans'><a href="#contact">Logout</a></li>
-            
         </ul>
         </div>
         )}

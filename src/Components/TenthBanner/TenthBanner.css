@@ -1,24 +1,19 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
-
 .tenthbanner{
     width:100%;
     height:100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     background-image: url('/public/desktop_Mini (1).avif');
     background-repeat: no-repeat;
     text-align: center;
     background-size: cover;
+    padding-bottom: 150px;
     /* background-color: red; */
 }
 
-.tenthbanner> h1{
+.tenthbanner > h1{
     font-family: 'Montserrat', sans-serif;
     color: white;
     margin-top:370px;
@@ -29,7 +24,7 @@
     width:90%;
 }
 
-.shop-now{
+.tenthbanner >.shop-now{
     font-family: 'Montserrat', sans-serif;
     width:300px;
     height:40px;
@@ -42,8 +37,19 @@
     cursor: pointer;
 }
 
+@media screen and (max-width:1100px) {
+    .tenthbanner{
+        width:100%;
+        height:auto;
+        min-height: 500px;
+        background-size:100% 100%;
+        background-position: center;
+        padding-bottom: 100px;
+    }
+}
+
 @media screen and (max-width:300px) {
-    .shop-now{
+    .tenthbanner > .shop-now{
         width:200px;
     }
 }

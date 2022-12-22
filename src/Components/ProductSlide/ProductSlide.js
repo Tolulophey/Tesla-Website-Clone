@@ -64,10 +64,12 @@ function Photo() {
             <img src={meal2} alt="secondProduct" className='secondProduct'/>
             <img src={meal3} alt="thirdProduct"/>
             <img src={meal4} alt="fourthProduct"/>
-            <button className='shop-now'>Shop Now</button>
           </div>
           <div className="app__gallery-images_arrows">
             <BsArrowLeftShort className="gallery__arrow-icon" onClick={prevMeal}/>
+            <div className="button">
+              <button className='shop-now'>Shop Now</button>
+            </div>
             <BsArrowRightShort className="gallery__arrow-icon" onClick={nextMeal}/>
           </div>
         </div>

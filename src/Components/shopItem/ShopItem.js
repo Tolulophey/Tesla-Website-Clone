@@ -28,7 +28,7 @@ function ShopItem() {
     const navigate = useNavigate();
     useEffect(() => {
         if(!localStorage.getItem("authenticated")){
-        navigate("/shop")
+        navigate("/sign-in")
         }
     }, [navigate])
     const randomIndex = []

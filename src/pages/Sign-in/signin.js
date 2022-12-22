@@ -21,9 +21,9 @@ const Signin = () => {
           </form>
           <Link to="/shop" className='next-btn'>Next</Link>
           <div className="password">
-              <a href="https://www.google.com">Forgot Email?</a>
+              <Link to="#">Forgot Email?</Link>
               <div></div>
-              <a href="https://www.google.com">Forgot Password?</a>
+              <Link to="#">Forgot Password?</Link>
           </div>
 
           <div className="linebreak">

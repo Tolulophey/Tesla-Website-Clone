@@ -7,6 +7,7 @@ import TenthBanner from '../../Components/TenthBanner/TenthBanner'
 import ProductSlide from '../../Components/ProductSlide/ProductSlide'
 import Footer from '../../Components/Footer/Footer'
 
+
 const Shop = () => {
   return (
     <div className='Shop'>
@@ -17,7 +18,6 @@ const Shop = () => {
         <NinthBanner/>
         <TenthBanner/>
         <Footer/>
-        {/* <ProductSlide/> */}
     </div>
   )
 }
