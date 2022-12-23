@@ -3,6 +3,8 @@ body{
 }
 .cartPage{
     padding-top:100px;
+    min-height: 100vh;
+    height: 100%;
 }
 
 .cart > .cart-title > h1{
@@ -109,7 +111,7 @@ body{
     font-weight: 600;
 }
 
-footer{
+.cartPage > .footer{
     position: absolute;
     bottom: 0;
     left: 0;
