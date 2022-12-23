@@ -21,7 +21,7 @@ function Banner() {
   // window.addEventListener('scroll', fadeTitle);
 
   return (
-    <div className='Banner'>
+    <div className='Banner' id='model3'>
        <Navbar/>
        <div className="banner-info">
             <h1>Model 3</h1>

@@ -5,7 +5,7 @@ import FirstButton from '../../Reusuables/FirstButton/Button'
 
 function ThirdBanner() {
   return (
-    <div className='thirdbanner'>
+    <div className='thirdbanner' id='models'>
         <h1>Model S</h1>
         <Link to="#">Schedule a Test Drive</Link>
         <FirstButton/>
