@@ -124,14 +124,11 @@
 }
 
 
-.overlay-close{
+/* .overlay-close{
     font-size: 27px;
     color:orange;
     cursor:pointer;
-    position:absolute;
-    top:20px;
-    right:20px;
-}
+} */
 
 .smallscreen-links{
     list-style-type:none;
