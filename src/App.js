@@ -8,7 +8,7 @@ import ApparelPage from "./pages/Apparel/ApparelPage"
 import ShopItemPage from './pages/ShopItem/shopItemPage'
 import './index.css'
 import ScrollToTop from './Components/scrollTop'
-import Cart from './pages/Cart/cart'
+import CartPage from './pages/Cart/CartPage'
 
 
 export const CartContext = React.createContext()
@@ -48,7 +48,7 @@ function App() {
         <NavContext.Provider value={{navbar: navbar, setNavbar: setNavbar}}>
           <Routes>
               <Route path="/shop/:name/:id" element={<ShopItemPage />}/>
-              <Route path="/cart" element={<Cart />}/>
+              <Route path="/cart" element={<CartPage />}/>
               <Route path="/shop" element={<Shop />}/>
               <Route path="/shop/:name" element={<ApparelPage />}/>
           </Routes>
