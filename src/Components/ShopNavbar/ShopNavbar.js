@@ -43,15 +43,26 @@ function ShopNavbar({changeBackground, navbar}) {
     return () => {
       window.removeEventListener('scroll', changeBackground);
     }
-  }, [navbar, changeBackground])
+  }, [changeBackground])
   return (
-    <div class={navbar ? 'navbar active' : 'navbar'}>
+    <div class={
+      navbar && toggleMenu ? 'navbar show active' :
+        !navbar && toggleMenu ? "navbar show" :
+          navbar && !toggleMenu ? "navbar active": 'navbar'
+    }>
+      <div className="top">
         <div className="logo">
             <img src={logo} alt="navbar_logo" className='site-logo' onClick={goHome}/>
             <img src={logo2} alt="navbar_logo" className="site-logo2" onClick={goHome}/>
             <div className={navbar ? 'divide active' : 'divide'}></div>
             <p className={navbar ? 'shop active' : 'shop'} onClick={goShop}>Shop</p>
         </div>
+        <div className="hamburger-menu">
+          <GiHamburgerMenu cursor="pointer" fontSize={27} className="hamburger"  onClick={() => setToggleMenu(!toggleMenu)}/>
+          <AiOutlineClose cursor="pointer" fontSize={27} className="close" onClick={()=>setToggleMenu(false)}/>
+        </div>
+      </div>
+      <div className="bottom">
         <div className={navbar ? 'shopnavbar-links active' : 'shopnavbar-links'}>
           <ul onClick={()=>setToggleMenu(false)}>
             <Link to="/shop/men-apparel">
@@ -65,7 +76,7 @@ function ShopNavbar({changeBackground, navbar}) {
             </Link>
           </ul>
         </div>
-        <div className="buttons">
+        <div className="buttons" onClick={()=>setToggleMenu(false)}>
             <Link 
             to="/cart" 
             className={cart.length >= 1 && cart[0] !== {} ? 'cart active' : 'cart'}
@@ -75,30 +86,9 @@ function ShopNavbar({changeBackground, navbar}) {
             </Link>
             <p to="/sign-in" onClick={logOut} className={navbar ? 'shoplogin active' : 'shoplogin'}> Logout</p>
         </div>
-        <div className="hamburger-menu">
-        <GiHamburgerMenu cursor="pointer" color="#000" fontSize={27}  onClick={() => setToggleMenu(!toggleMenu)} className="hamburger"/>
-        <AiOutlineClose color="#fff" cursor="pointer" fontSize={27} className="overlay-close" onClick={()=>setToggleMenu(false)}/>
-        </div>
+      </div>
     </div>
   )
 }
 
 export default ShopNavbar
-
-/* <div className={navbar ? 'navbar_smallscreen active' : 'navbar_smallscreen'}>
-<GiHamburgerMenu cursor="pointer" color="#000" fontSize={27}  onClick={() => setToggleMenu(!toggleMenu)} className="hamburger"/>
-{
-toggleMenu && (
-<div className="smallscreen-overlay">
-  <AiOutlineClose color="#fff" cursor="pointer" fontSize={27} className="overlay-close" onClick={setToggleMenu(false)}/>
-  <ul className='smallscreen-links' onClick={setToggleMenu(false)}>
-    <li className='opensans'><a href="#home">Charging</a></li>
-    <li className='opensans'><a href="#about">Vehicle Accessories</a></li>
-    <li className='opensans'><a href="#menu">Apparel</a></li>
-    <li className='opensans'><a href="#gallery">Lifestyle</a></li>
-    <li className='opensans' onClick={logOut}>Logout</li>
-</ul>
-</div>
-)}
-
-</div> */
