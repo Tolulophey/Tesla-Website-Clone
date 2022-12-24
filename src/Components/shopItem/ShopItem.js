@@ -13,6 +13,7 @@ function ShopItem() {
     const cart = cartItem.cart
     const setCart = cartItem.setCart
     const { id, name } = useParams();
+    const [quantity, setQuantity] = useState(1)
     let data
     switch (name) {
       case "women-apparel":
@@ -31,6 +32,9 @@ function ShopItem() {
         navigate("/sign-in")
         }
     }, [navigate])
+    useEffect(() => {
+        setQuantity(1)
+    }, [id])
     const randomIndex = []
     let randomNumber = Math.floor(Math.random()*data.length)
     while(randomIndex.length < 3){
@@ -41,7 +45,6 @@ function ShopItem() {
     }
     const item = data[id-1]
     const sizes = ["s", "m", "l", "xl", "xxl", "3xl"]
-    const [quantity, setQuantity] = useState(1)
     const increaseQuantity = ()=> {
         setQuantity(quantity+1)
     }
@@ -65,8 +68,8 @@ function ShopItem() {
         }
         localStorage.setItem("cart", JSON.stringify(cart))
     }
-    console.log(JSON.parse(localStorage.getItem("cart")))
-    console.log(cart)
+    // console.log(JSON.parse(localStorage.getItem("cart")))
+    // console.log(cart)
     return (
         <div className='shop_item'>
             <div className="shop_product">

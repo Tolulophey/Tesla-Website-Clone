@@ -1,7 +1,7 @@
 body{
     height: auto;
 }
-.cartPage{
+.cartPage > .cart{
     padding-top:100px;
     min-height: 100vh;
     height: auto;
@@ -10,6 +10,7 @@ body{
 .cart > .cart-title > h1{
     padding-left: 10px;
     font-size: 40px;
+    font-weight: 600;
 }
 
 .cart-products{
@@ -20,6 +21,11 @@ body{
 .cart > .cart-items{
     display: flex;
     flex-direction: column;
+}
+.cart > .cart-items > p{
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 10px;
 }
 .cart > .cart-items > .cart-item{
     width:100%;
@@ -108,7 +114,7 @@ body{
 
 .cartPage > .footer{
     /* padding-top: 100px; */
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     left: 0;
 }
