@@ -45,40 +45,7 @@
     margin-top: 40px;
     cursor: pointer;
 }
-/* Navbar color*/
-/* .divide{
-    background-color: #fff;
-}
-.shop{
-    color: white;
-}
-.navbar{
-    background-color: black;
-    color:white;
-}
-.shopnavbar-links > ul > a > li{
-    color: white;
-}
-.shoplogin{
-    color: #fff;
-}
-.shop-cart{
-    color: #fff;
-}
-.navbar .buttons .cart p{
-    background-color: white;
-    color: black;
-}
-.buttons .cart{
-    text-decoration: none;
-    color: #000;
-}
-.navbar .site-logo {
-    display: none;
-}
-.navbar .site-logo2 {
-    display: block;
-} */
+
 @media screen and (max-width:1100px) {
     .Shopbanner{
         width:100%;
@@ -101,9 +68,3 @@
         width:200px;
     }
 }
-/* @media screen and (max-width:300px){
-    .Shopbanner > .shop-banner-info > button {
-        width: 200px;
-        height: 40px;
-    }
-} */
