@@ -1,11 +1,13 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import { useNavigate } from "react-router-dom";
 import './signup.css'
 import logo from '../../assets/tesla-logo-png-20.png'
 import Footer from '../../Components/Footer/Footer'
+import { UserContext } from '../../App';
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const {authenticated} = useContext(UserContext)
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -13,21 +15,18 @@ const SignUp = () => {
   const [cPassword, setCPassword] = useState("");
   const [passwordMatch, setPasswordMatch] = useState(true);
   const [registered, setRegistered] = useState(true);
-  const [authenticated, setAuthenticated] = useState(
-  localStorage.getItem(localStorage.getItem("authenticated") || false)
-  );
- useEffect(() => {
-  if(authenticated){
-      navigate("/shop")
-    }
-   if(password !== cPassword && cPassword !== ""){
-      setPasswordMatch(false)
-    } else{
-      setPasswordMatch(true)
-      setRegistered(true)
-    }
+  useEffect(() => {
+    if(authenticated){
+        navigate("/shop")
+      }
+    if(password !== cPassword && cPassword !== ""){
+        setPasswordMatch(false)
+      } else{
+        setPasswordMatch(true)
+        setRegistered(true)
+      }
 
- }, [password, cPassword, authenticated, navigate])
+  }, [password, cPassword, authenticated, navigate])
  
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,10 +37,9 @@ const SignUp = () => {
       password: password
     }
     if(passwordMatch && password !== ""){
-      await localStorage.setItem("user", JSON.stringify(user))
-      await localStorage.setItem("authenticated", true)
-      setAuthenticated(true)
-      navigate("/shop")
+      const users = await localStorage.getItem("users") || []
+      await localStorage.setItem("user", JSON.stringify([...users, user]))
+      navigate("/sign-in")
     } else{
         setRegistered(false)
     }

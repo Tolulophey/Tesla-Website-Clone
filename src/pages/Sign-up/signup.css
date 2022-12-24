@@ -45,23 +45,17 @@
     font-family: 'Montserrat', sans-serif;
     padding-left:10%;
     margin-bottom: 30px;
-    /* margin-right:300px; */
-    /* margin-bottom: 15px; */
-    /* display: flex; */
-    /* float: left; */
 }
 
 .label-text{
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     display: block;
-    /* margin-bottom:4px; */
     padding-left: 10%;
 }
 
 form{
     width:100%;
-    /* text-align: center; */
 }
 
 .submit{

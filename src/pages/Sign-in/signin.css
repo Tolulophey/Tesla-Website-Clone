@@ -1,6 +1,7 @@
 .sign-in{
     width:100%;
-    height:100vh;
+    min-height:100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
 }
@@ -14,75 +15,85 @@
     align-items: center;
 }
 
-
 .sign-logo > img{
     width:35%;
     display: flex;
     flex-direction: row;
-    /* padding-top:30px; */
     padding:0px  10px;
-    /* padding-left: 80px; */
 }
 
 .signin{
+    width:100%;
     display: flex;
     flex-direction: column;
-    width:40%;
-    /* justify-content: center; */
-    /* align-items: center; */
     margin:auto;
-    /* background-color: aqua; */
-    
 }
 
 .signin-text{
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .sign-text{
     font-family: 'Montserrat', sans-serif;
-    padding-left:10%;
     margin-bottom: 30px;
-    /* margin-right:300px; */
-    /* margin-bottom: 15px; */
-    /* display: flex; */
-    /* float: left; */
-}
-
-.label-text{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    display: block;
-    margin-bottom:4px;
-    padding-left: 10%;
-}
-
-form{
-    width:100%;
-    /* text-align: center; */
 }
 
 .form-info{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    height: auto;
 }
 
-form > input{
-    margin:0px calc(20%/2);
-    width:80%;
-    height:40px;
-    border-radius: 25px;
-    border:none;
-    background-color: grey;
+.signin > .form-info > form{
+    position: relative;
+    width:40%;
+    height: 200px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow: hidden;
 }
 
-.next-btn{
+.signin > .form-info >  form > div{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 50px 20px;
+}
+.signin > .form-info >  form > #page2 {
+    left: 100%;
+}
+
+
+.signin > .form-info >  form .form-control{
+    width: 100%;
+}
+
+label{
     font-family: 'Montserrat', sans-serif;
-    width:80%;
+    font-size: 15px;
+    display: block;
+    margin-bottom:10px;
+}
+.signin > .form-info >  form input{
+    width:100%;
+    border-radius: 25px;
+    padding: 20px;
+    border:1px solid grey;
+}
+
+.signin > .form-info >  form .button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.signin > .form-info > form .button > button:first-child {
+    margin-right: 20px;
+}
+.signin > .form-info > form button{
+    font-family: 'Montserrat', sans-serif;
+    width:200px;
     margin:0px calc(20%/2);
     height:40px;
     line-height: 40px;
@@ -95,7 +106,14 @@ form > input{
     text-decoration: none;
 }
 
-.password{
+.signin > .form-info > .error{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    font-size: 20px;
+    color: red;
+}
+.signin > .form-info > .password{
     width:80%;
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
@@ -105,10 +123,9 @@ form > input{
     justify-content: center;
     margin-top:20px;
     margin-bottom: 30px;
-    /* background-color: aqua; */
 }
 
-.password > div{
+.signin > .form-info > .password > div{
     display: flex;
     justify-content: center;
     width:1px;
@@ -131,13 +148,6 @@ form > input{
     justify-content: center;
     align-items: center;
     padding-bottom:10px;
-    /* background-color: aqua; */
-    /* flex-direction: row; */
-    /* width:100%; */
-    
-    /* height:1px; */
-    /* background-color:red; */
-    /* margin:0 10px; */
 }
 
 .lines > hr{
@@ -147,18 +157,17 @@ form > input{
 
 /* .lines */
 
-.lines >p{
+.lines > p{
     padding:0 10px;
     font-family: 'Montserrat', sans-serif;
 }
-
 
 .create-account{
     font-size: 15px;
     display: inline-block;
     line-height:40px;
-    width:80%;
-    margin:0px calc(20%/2);
+    width: 300px;
+    margin:0px auto;
     text-align: center;
     text-decoration: none;
     height:40px;
@@ -177,23 +186,7 @@ form > input{
     /* border:2px grey; */
 }
 
-@media screen and (max-width:400px),(max-width:500px) {
-    .signin{
-        width:90%;
-    }
-
-    .sign-logo{
-        width:90%;
-        justify-content: flex-start;
-        padding-left: 30px;
-    }
-
-    .sign-logo > img{
-        width:50%;
-    }
-}
-
-@media screen and (max-width:1100px), (max-width:1300px) {
+@media screen and (max-width:1300px) {
     .signin{
         width:70%;
     }
@@ -203,13 +196,9 @@ form > input{
         justify-content: flex-start;
         padding-left: 30px;
     }
-
-    /* .password > a{
-        font-size:17px;
-    } */
 }
 
-@media screen and (max-width:900px), (max-width:1000px) {
+@media screen and (max-width:1000px) {
     .signin{
         width:90%;
     }
@@ -219,15 +208,39 @@ form > input{
         justify-content: flex-start;
         padding-left: 30px;
     }
+    .signin > .form-info > form {
+        width: 80%;
+    } 
+}
+@media screen and (max-width:700px) {
+    .signin > .form-info > form {
+        width: 100%;
+    } 
+}
 
-    /* .password > a{
-        font-size:20px;
-    } */
+@media screen and (max-width:500px) {
+    .signin{
+        width:90%;
+    }
+
+    .sign-logo{
+        width:90%;
+        justify-content: flex-start;
+        padding-left: 30px;
+    }
+
+    .sign-logo > img{
+        width:50%;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .sign-text {
+        padding-left: 0;
+    }
 }
 
 @media screen and (max-width:300px) {
-    
-
     .sign-logo{
         width:100%;
         justify-content: flex-start;
@@ -237,12 +250,20 @@ form > input{
     .sign-logo > img{
         width: 40%;
     }
-
-    /* .password > a{
-        margin: 0px 10px;
-    } */
-
-     /* .password > a{
-        font-size:10px;
-    } */
+    .sign-text {
+        padding-left: 0;
+    }
+    .signin > .form-info > .password {
+        flex-direction: column;
+        align-items: center;
+    }
+    .signin > .form-info > .password > a {
+        margin-bottom: 10px;
+    }
+    .signin > .form-info > .password > div {
+        display: none;
+    }
+    .create-account {
+        width: 80%;
+    }
 }
