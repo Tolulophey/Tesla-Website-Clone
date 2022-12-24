@@ -1,10 +1,10 @@
 body{
-    position: relative;
+    height: auto;
 }
 .cartPage{
     padding-top:100px;
     min-height: 100vh;
-    height: 100%;
+    height: auto;
 }
 
 .cart > .cart-title > h1{
@@ -53,13 +53,8 @@ body{
 .cart > .cart-items >.cart-item > .cart-item-details > .cart-item-price{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
-
-/* .price-change{
-    display: flex;
-    flex-direction: row;
-    margin:20px 0px;
-} */
 
 .cart > .cart-items >.cart-item > .cart-item-details > .cart-item-price > .item-total > .total-price{
     font-size: 30px;
@@ -112,7 +107,62 @@ body{
 }
 
 .cartPage > .footer{
-    position: absolute;
+    /* padding-top: 100px; */
+    position: fixed;
     bottom: 0;
     left: 0;
+}
+
+@media screen and (max-width:900px) {
+    .cart > .total > span {
+        font-size: 40px;
+    }
+    .cart > .cart-items > .cart-item > .cart-item-details {
+        padding: 30px;
+    }
+}
+@media screen and (max-width:500px) {
+    .cart > .total > span {
+        font-size: 30px;
+    }
+    .cart > .cart-items > .cart-item > .cart-item-details {
+        padding: 10px;
+        width: 100%;
+        display: block;
+    }
+    .cart > .cart-items >.cart-item > .cart-item-details > .cart-item-price {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* align-items: center; */
+    }
+    .cart > .cart-items > .cart-item > .cart-item-details > p {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .cart > .cart-items >.cart-item > .cart-item-details > .cart-item-price > .price-change-btn {
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    .cart > .cart-items >.cart-item > .cart-item-details > .cart-item-price > .item-total {
+        width: 100%;
+        padding-left: 0px;
+        justify-content: space-between;
+    }
+    .cart > .cart-items > .cart-item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+    .cart > .cart-items > .cart-item > .cart-item-img {
+        width: 100%;
+    }
+    .cart > .cart-items > .cart-item > .cart-item-img > img {
+        height: 200px;
+    }
+    .cart > .cart-items >.cart-item > .cart-item-details > .cart-item-price > .item-total > button {
+        width: 150px;
+    }
 }

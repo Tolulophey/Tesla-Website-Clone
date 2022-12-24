@@ -12,9 +12,13 @@ import CartPage from './pages/Cart/CartPage'
 
 
 export const CartContext = React.createContext()
+export const UserContext = React.createContext()
 export const NavContext = React.createContext()
 function App() {
   const [navbar, setNavbar] = useState(false);
+  const [authenticated, setAuthenticated] = useState(
+  localStorage.getItem(localStorage.getItem("authenticated") || false)
+  );
   if(!localStorage.getItem("authenticated")){
       localStorage.setItem("cart", JSON.stringify([{}]))
   }
@@ -51,14 +55,16 @@ function App() {
               <Route path="/cart" element={<CartPage />}/>
               <Route path="/shop" element={<Shop />}/>
               <Route path="/shop/:name" element={<ApparelPage />}/>
+              <Route path="/" element={<Home />}/>
           </Routes>
         </NavContext.Provider>
         </CartContext.Provider>
-        <Routes>
-            <Route path="/" element={<Home />}/>
-            <Route path="/sign-in" element={<SignIn />}/>
-            <Route path="/sign-up" element={<SignUp />}/>
-        </Routes>
+        <UserContext.Provider value={{authenticated: authenticated, setAuthenticated: setAuthenticated}}>
+          <Routes>
+              <Route path="/sign-in" element={<SignIn />}/>
+              <Route path="/sign-up" element={<SignUp />}/>
+          </Routes>
+        </UserContext.Provider>
       </Router>
   </div>
   )

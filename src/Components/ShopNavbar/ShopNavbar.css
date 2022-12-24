@@ -199,6 +199,9 @@
     .navbar.show{
         background-color:  rgb(233, 229, 229);
     }
+    .navbar.active.show {
+        background-color: #000;
+    }
     .navbar > .top{
         padding: 0 30px;
         width: 100%;

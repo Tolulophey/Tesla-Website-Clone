@@ -11,12 +11,12 @@ import {CartContext} from "../../App"
 
 function ShopNavbar({changeBackground, navbar}) {
   const navigate = useNavigate()
-  const cartItem = useContext(CartContext);
-  const cart = cartItem.cart
+  const {cart} = useContext(CartContext);
   const [toggleMenu, setToggleMenu] = useState(false);
   
   const logOut =() =>{
     localStorage.removeItem("authenticated")
+    localStorage.removeItem("cart")
     navigate("/sign-in")
   }
   const goShop =() =>{
@@ -25,8 +25,8 @@ function ShopNavbar({changeBackground, navbar}) {
     }
   }
   const goHome =() =>{
-    if(window.location.pathname !== "/shop"){
-      navigate("/shop")
+    if(window.location.pathname !== "/"){
+      navigate("/")
     }
   }
   
@@ -79,12 +79,12 @@ function ShopNavbar({changeBackground, navbar}) {
         <div className="buttons" onClick={()=>setToggleMenu(false)}>
             <Link 
             to="/cart" 
-            className={cart.length >= 1 && cart[0] !== {} ? 'cart active' : 'cart'}
+            className={cart.length >= 1 && JSON.stringify(cart) !== "[{}]" ? 'cart active' : 'cart'}
             >
               <BsCart2 className={navbar ? 'shop-cart active' : 'shop-cart'}/>
               <p>{cart.length}</p>
             </Link>
-            <p to="/sign-in" onClick={logOut} className={navbar ? 'shoplogin active' : 'shoplogin'}> Logout</p>
+            <p onClick={logOut} className={navbar ? 'shoplogin active' : 'shoplogin'}> Logout</p>
         </div>
       </div>
     </div>

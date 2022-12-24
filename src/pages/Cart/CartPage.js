@@ -13,7 +13,6 @@ function CartPage() {
         } else{
         setNavbar(false);
         }
-        console.log(window.scrollY)
     }
     useEffect(() => {
         window.addEventListener("load", ()=>{

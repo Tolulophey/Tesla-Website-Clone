@@ -26,11 +26,11 @@ function ShopItem() {
           break
     }
     const navigate = useNavigate();
-    useEffect(() => {
-        if(!localStorage.getItem("authenticated")){
-        navigate("/sign-in")
-        }
-    }, [navigate])
+    // useEffect(() => {
+    //     if(!localStorage.getItem("authenticated")){
+    //     navigate("/sign-in")
+    //     }
+    // }, [navigate])
     const randomIndex = []
     let randomNumber = Math.floor(Math.random()*data.length)
     while(randomIndex.length < 3){
@@ -52,7 +52,7 @@ function ShopItem() {
     }
     const addToCart = () => {
         const exist = cart.find((wear) => wear.id === item.id && wear.apparel === name);
-        if(cart.length === 1 && cart[0].quantity === {}){
+        if(cart.length >= 1 && JSON.stringify(cart) === "[{}]"){
             setCart([{ ...item, apparel: name, quantity: quantity }])
         } else if (exist) {
         setCart(

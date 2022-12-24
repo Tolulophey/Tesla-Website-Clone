@@ -18,7 +18,7 @@ const Cart = () => {
     }, [navigate])
     useEffect(() => {
         let ans = 0;
-        if(myCart[0] !== {} || myCart[0] !== undefined){
+        if(JSON.stringify(myCart) !== "[]" || JSON.stringify(myCart) !== "[{}]"){
             myCart.map((item) => (ans += item.quantity * item.price));
         }
         setPrice(ans);
@@ -29,8 +29,8 @@ const Cart = () => {
             <div className='cart-title'>
              <h1>Cart</h1>
             </div>
-            <div className='cart-items'>
-                {myCart[0] === {} || myCart[0] === undefined  ? 
+            <div className='cart-items'>  
+                {JSON.stringify(myCart) === "[]" || JSON.stringify(myCart) === "[{}]" ? 
                 <p>Nothing in Cart</p> : 
                 myCart.map((item, index)=>{
                     return (
