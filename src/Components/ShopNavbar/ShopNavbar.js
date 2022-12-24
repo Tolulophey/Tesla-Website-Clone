@@ -15,8 +15,7 @@ function ShopNavbar({changeBackground, navbar}) {
   const [toggleMenu, setToggleMenu] = useState(false);
   
   const logOut =() =>{
-    localStorage.removeItem("authenticated")
-    localStorage.removeItem("cart")
+    localStorage.clear()
     navigate("/sign-in")
   }
   const goShop =() =>{

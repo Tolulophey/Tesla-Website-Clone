@@ -26,7 +26,7 @@ function Navbar() {
     }
   }
   const logOut =() =>{
-    localStorage.removeItem("authenticated")
+    localStorage.clear()
     navigate("/sign-in")
   }
   const changeBackground =() =>{
