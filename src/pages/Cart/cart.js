@@ -5,6 +5,7 @@ import womenWears from "../../Components//Apparel/wears/women"
 import kidWears from "../../Components//Apparel/wears/kids"
 import './cart.css'
 import {CartContext} from "../../App"
+import {AiFillDelete} from 'react-icons/ai'
 
 const Cart = () => {
     const CartItem = useContext(CartContext);
@@ -53,7 +54,7 @@ const Cart = () => {
                                     </div>
                                     <div className='item-total'>
                                         <span className='total-price'>${item.price * item.quantity}</span>
-                                        <button onClick={() => handleRemove(item.id)}>Remove</button>
+                                        <AiFillDelete className='remove-btn' onClick={() => handleRemove(item.id)}/>
                                     </div>
                                 </div>
                             </div>
