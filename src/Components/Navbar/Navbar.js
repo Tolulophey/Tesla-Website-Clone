@@ -92,7 +92,7 @@ function Navbar() {
           <div className="home-buttons" onClick={()=>setToggleMenu(false)}>
             {auth && <Link 
             to="/cart" 
-            className={cart.length >= 1 && JSON.stringify(cart) === "[{}]" ? 'cart active' : 'cart'}
+            className={cart.length >= 1 && JSON.stringify(cart) !== "[{}]" ? 'cart active' : 'cart'}
             >
               <BsCart2 className={navbar ? 'shop-cart active' : 'shop-cart'}/>
               <p>{cart.length}</p>

@@ -19,7 +19,7 @@ const Cart = () => {
     }, [navigate])
     useEffect(() => {
         let ans = 0;
-        if(JSON.stringify(myCart) !== "[]" || JSON.stringify(myCart) !== "[{}]"){
+        if(JSON.stringify(myCart) !== "[]" && JSON.stringify(myCart) !== "[{}]"){
             myCart.map((item) => (ans += item.quantity * item.price));
         }
         setPrice(ans);
