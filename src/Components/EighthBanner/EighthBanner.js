@@ -12,4 +12,4 @@ function EighthBanner() {
   )
 }
 
-export default EighthBanner
+export default React.memo(EighthBanner)

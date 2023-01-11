@@ -4,24 +4,18 @@ import { Link } from 'react-router-dom'
 import './Banner.css'
 import {BsChevronDown} from 'react-icons/bs'
 import FirstButton from '../../Reusuables/FirstButton/Button'
+import useElementOnScreen from '../../hooks/useElementOnScreen'
 // import {motion} from 'framer-motion'
 
 function Banner() {
-
-  // const [banner, setBanner] = useState (false);
-
-  // const fadeTitle = () =>{
-  //   if(window.scrollY >=300){
-  //     setBanner(true)
-  //   }else{
-  //     setBanner(false);
-  //   }
-  // }
-
-  // window.addEventListener('scroll', fadeTitle);
+  const [scrollRef, isVisible] = useElementOnScreen({
+    root: null,
+    rootMargin: "0px",
+    threshold: 1.0
+  })
 
   return (
-    <div className='Banner' id='model3'>
+    <div ref={scrollRef} className={isVisible? "Banner fade":'Banner'} id='model3'>
        <Navbar/>
        <div className="banner-info">
             <h1>Model 3</h1>

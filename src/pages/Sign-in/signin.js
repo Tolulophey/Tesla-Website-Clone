@@ -19,11 +19,12 @@ const Signin = () => {
   const handleSubmit = (e)=>{
     e.preventDefault();
     // const form = document.querySelector("form")
-    const users = JSON.parse(localStorage.getItem("user")) || []
+    const users = JSON.parse(localStorage.getItem("users")) || []
     const user = users.find((user) => user.email === email);
     // form.submit()
     if (user && user.password === password) {
         localStorage.setItem("authenticated", true)
+        localStorage.setItem("user", JSON.stringify(user))
         setAuthenticated(true)
         navigate("/shop");
     } else {

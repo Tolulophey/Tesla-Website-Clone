@@ -12,4 +12,4 @@ function TenthBanner() {
   )
 }
 
-export default TenthBanner
+export default React.memo(TenthBanner)

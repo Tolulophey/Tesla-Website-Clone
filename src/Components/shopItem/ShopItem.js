@@ -131,4 +131,4 @@ function ShopItem() {
   )
 }
 
-export default ShopItem
+export default React.memo(ShopItem)

@@ -6,11 +6,11 @@ import {GiHamburgerMenu} from 'react-icons/gi';
 import {AiOutlineClose} from 'react-icons/ai';
 import {BsCart2} from 'react-icons/bs'
 import {Link, useNavigate} from "react-router-dom"
-// import { SlArrowDown } from "react-icons/sl";
 import {CartContext} from "../../App"
 
 function ShopNavbar({changeBackground, navbar}) {
   const navigate = useNavigate()
+  let auth = JSON.parse(localStorage.getItem("authenticated"))
   const {cart} = useContext(CartContext);
   const [toggleMenu, setToggleMenu] = useState(false);
   
@@ -44,7 +44,7 @@ function ShopNavbar({changeBackground, navbar}) {
     }
   }, [changeBackground])
   return (
-    <div class={
+    <div className={
       navbar && toggleMenu ? 'navbar show active' :
         !navbar && toggleMenu ? "navbar show" :
           navbar && !toggleMenu ? "navbar active": 'navbar'
@@ -83,11 +83,11 @@ function ShopNavbar({changeBackground, navbar}) {
               <BsCart2 className={navbar ? 'shop-cart active' : 'shop-cart'}/>
               <p>{cart.length}</p>
             </Link>
-            <p onClick={logOut} className={navbar ? 'shoplogin active' : 'shoplogin'}> Logout</p>
+            {auth && <p onClick={logOut} className={navbar ? 'shoplogin active' : 'shoplogin'}> Logout</p>}
         </div>
       </div>
     </div>
   )
 }
 
-export default ShopNavbar
+export default React.memo(ShopNavbar)

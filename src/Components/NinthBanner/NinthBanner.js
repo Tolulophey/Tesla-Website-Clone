@@ -8,8 +8,8 @@ const NinthBanner = () => {
     <div className="cards">
         {wears.map((cards,index)=>{
         return(
-          <div className="cards-container">
-             <img src={cards.image} alt="img" key={index+1} className="product-images"/>
+          <div className="cards-container" key={index+1}>
+             <img src={cards.image} alt="img" className="product-images"/>
              <div className="card-container-content">
               <p className='card-text'>{cards.name}</p>
               <Link to={cards.link} className="men-shop">Shop Now</Link>
@@ -22,4 +22,4 @@ const NinthBanner = () => {
   )
 }
 
-export default NinthBanner
+export default React.memo(NinthBanner)

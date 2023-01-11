@@ -18,10 +18,9 @@
 .signup-logo > img{
     width:35%;
     display: flex;
+    cursor: pointer;
     flex-direction: row;
-    /* padding-top:30px; */
     padding:0px  10px;
-    /* padding-left: 80px; */
 }
 
 .signup{
@@ -111,6 +110,14 @@ form > input{
 
 .pass_match.false{
     display: block;
+}
+.empty{
+    color: red;
+    font-size: small;
+    padding: 5px 0;
+    font-weight: 500;
+    width:80%;
+    margin:0px calc(20%/2);
 }
 .registered{
     display: none;

@@ -1,269 +1,269 @@
-.sign-in{
-    width:100%;
-    min-height:100vh;
-    height: auto;
-    display: flex;
-    flex-direction: column;
+.sign-in {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.sign-logo{
-    width:20%;
-    display: flex;
-    flex-direction: row;
-    height:80px;
-    justify-content: center;
-    align-items: center;
+.sign-logo {
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
 }
 
-.sign-logo > img{
-    width:35%;
-    display: flex;
-    flex-direction: row;
-    padding:0px  10px;
+.sign-logo > img {
+  width: 35%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  padding: 0px 10px;
 }
 
-.signin{
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    margin:auto;
+.signin {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
 }
 
-.signin-text{
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.signin-text {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.sign-text{
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 30px;
+.sign-text {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 30px;
 }
 
-.form-info{
-    width: 100%;
-    height: auto;
+.form-info {
+  width: 100%;
+  height: auto;
 }
 
-.signin > .form-info > form{
-    position: relative;
-    width:40%;
-    height: 200px;
-    margin: 0 auto;
-    padding: 20px;
-    overflow: hidden;
+.signin > .form-info > form {
+  position: relative;
+  width: 40%;
+  height: 200px;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden;
 }
 
-.signin > .form-info >  form > div{
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 50px 20px;
+.signin > .form-info > form > div {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 50px 20px;
 }
-.signin > .form-info >  form > #page2 {
-    left: 100%;
-}
-
-
-.signin > .form-info >  form .form-control{
-    width: 100%;
+.signin > .form-info > form > #page2 {
+  left: 100%;
 }
 
-label{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    display: block;
-    margin-bottom:10px;
-}
-.signin > .form-info >  form input{
-    width:100%;
-    border-radius: 25px;
-    padding: 20px;
-    border:1px solid grey;
+.signin > .form-info > form .form-control {
+  width: 100%;
 }
 
-.signin > .form-info >  form .button {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  display: block;
+  margin-bottom: 10px;
+}
+.signin > .form-info > form input {
+  width: 100%;
+  border-radius: 25px;
+  padding: 20px;
+  border: 1px solid grey;
+}
+
+.signin > .form-info > form .button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 .signin > .form-info > form .button > button:first-child {
-    margin-right: 20px;
+  margin-right: 20px;
 }
-.signin > .form-info > form button{
-    font-family: 'Montserrat', sans-serif;
-    width:200px;
-    margin:0px calc(20%/2);
-    height:40px;
-    line-height: 40px;
-    border-radius: 25px;
-    border:none;
-    color:white;
-    background-color: black;
-    margin:20px 0px;
-    text-align: center;
-    text-decoration: none;
-}
-
-.signin > .form-info > .error{
-    display: flex;
-    justify-content: center;
-    margin: 10px 0;
-    font-size: 20px;
-    color: red;
-}
-.signin > .form-info > .password{
-    width:80%;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    margin:0px calc(20%/2);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top:20px;
-    margin-bottom: 30px;
+.signin > .form-info > form button {
+  font-family: "Montserrat", sans-serif;
+  width: 200px;
+  margin: 0px calc(20% / 2);
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+  border-radius: 25px;
+  border: none;
+  color: white;
+  background-color: black;
+  margin: 20px 0px;
+  text-align: center;
+  text-decoration: none;
 }
 
-.signin > .form-info > .password > div{
-    display: flex;
-    justify-content: center;
-    width:1px;
-    height:20px;
-    background-color:black;
-    margin:0 10px;
+.signin > .form-info > .error {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  font-size: 20px;
+  color: red;
+}
+.signin > .form-info > .password {
+  width: 80%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  margin: 0px calc(20% / 2);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
-.linebreak{
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 50px;
+.signin > .form-info > .password > div {
+  display: flex;
+  justify-content: center;
+  width: 1px;
+  height: 20px;
+  background-color: black;
+  margin: 0 10px;
 }
 
-.lines{
-    width:80%;
-    display: flex;
-    margin:0px calc(20%/2);
-    justify-content: center;
-    align-items: center;
-    padding-bottom:10px;
+.linebreak {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
 }
 
-.lines > hr{
-    width:130px;
-    height:1px;
+.lines {
+  width: 80%;
+  display: flex;
+  margin: 0px calc(20% / 2);
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.lines > hr {
+  width: 130px;
+  height: 1px;
 }
 
 /* .lines */
 
-.lines > p{
-    padding:0 10px;
-    font-family: 'Montserrat', sans-serif;
+.lines > p {
+  padding: 0 10px;
+  font-family: "Montserrat", sans-serif;
 }
 
-.create-account{
-    font-size: 15px;
-    display: inline-block;
-    line-height:40px;
-    width: 300px;
-    margin:0px auto;
-    text-align: center;
-    text-decoration: none;
-    height:40px;
-    border-radius: 25px;
-    border:2px solid black;
-    color: black;
-    font-family: 'Montserrat', sans-serif;
-    cursor: pointer;
-    /* background-color: grey; */
-    
+.create-account {
+  font-size: 15px;
+  display: inline-block;
+  line-height: 40px;
+  width: 300px;
+  margin: 0px auto;
+  text-align: center;
+  text-decoration: none;
+  height: 40px;
+  border-radius: 25px;
+  border: 2px solid black;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  /* background-color: grey; */
 }
 
-.create-account:hover{
-    background-color: black;
-    color:white;
-    /* border:2px grey; */
+.create-account:hover {
+  background-color: black;
+  color: white;
+  /* border:2px grey; */
 }
 
-@media screen and (max-width:1300px) {
-    .signin{
-        width:70%;
-    }
+@media screen and (max-width: 1300px) {
+  .signin {
+    width: 70%;
+  }
 
-    .sign-logo{
-        width:40%;
-        justify-content: flex-start;
-        padding-left: 30px;
-    }
+  .sign-logo {
+    width: 40%;
+    justify-content: flex-start;
+    padding-left: 30px;
+  }
 }
 
-@media screen and (max-width:1000px) {
-    .signin{
-        width:90%;
-    }
+@media screen and (max-width: 1000px) {
+  .signin {
+    width: 90%;
+  }
 
-    .sign-logo{
-        width:50%;
-        justify-content: flex-start;
-        padding-left: 30px;
-    }
-    .signin > .form-info > form {
-        width: 80%;
-    } 
+  .sign-logo {
+    width: 50%;
+    justify-content: flex-start;
+    padding-left: 30px;
+  }
+  .signin > .form-info > form {
+    width: 80%;
+  }
 }
-@media screen and (max-width:700px) {
-    .signin > .form-info > form {
-        width: 100%;
-    } 
-}
-
-@media screen and (max-width:500px) {
-    .signin{
-        width:90%;
-    }
-
-    .sign-logo{
-        width:90%;
-        justify-content: flex-start;
-        padding-left: 30px;
-    }
-
-    .sign-logo > img{
-        width:50%;
-    }
+@media screen and (max-width: 700px) {
+  .signin > .form-info > form {
+    width: 100%;
+  }
 }
 
-@media screen and (max-width:400px) {
-    .sign-text {
-        padding-left: 0;
-    }
+@media screen and (max-width: 500px) {
+  .signin {
+    width: 90%;
+  }
+
+  .sign-logo {
+    width: 90%;
+    justify-content: flex-start;
+    padding-left: 30px;
+  }
+
+  .sign-logo > img {
+    width: 50%;
+  }
 }
 
-@media screen and (max-width:300px) {
-    .sign-logo{
-        width:100%;
-        justify-content: flex-start;
-        padding-left: 30px;
-    }
+@media screen and (max-width: 400px) {
+  .sign-text {
+    padding-left: 0;
+  }
+}
 
-    .sign-logo > img{
-        width: 40%;
-    }
-    .sign-text {
-        padding-left: 0;
-    }
-    .signin > .form-info > .password {
-        flex-direction: column;
-        align-items: center;
-    }
-    .signin > .form-info > .password > a {
-        margin-bottom: 10px;
-    }
-    .signin > .form-info > .password > div {
-        display: none;
-    }
-    .create-account {
-        width: 80%;
-    }
+@media screen and (max-width: 300px) {
+  .sign-logo {
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 30px;
+  }
+
+  .sign-logo > img {
+    width: 40%;
+  }
+  .sign-text {
+    padding-left: 0;
+  }
+  .signin > .form-info > .password {
+    flex-direction: column;
+    align-items: center;
+  }
+  .signin > .form-info > .password > a {
+    margin-bottom: 10px;
+  }
+  .signin > .form-info > .password > div {
+    display: none;
+  }
+  .create-account {
+    width: 80%;
+  }
 }

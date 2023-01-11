@@ -27,7 +27,7 @@ function Banner() {
   // window.addEventListener('scroll', fadeTitle);
 
   return (
-    <div className='Shopbanner' onload={setNavbar(true)}>
+    <div className='Shopbanner' onLoad={setNavbar(true)}>
        <ShopNavbar navbar={navbar} changeBackground = {changeBackground}/>
        <div className="shop-banner-info">
             <h1>Wall Connector</h1>

@@ -9,6 +9,7 @@ const SignUp = () => {
   const navigate = useNavigate();
   const {authenticated} = useContext(UserContext)
   const [firstName, setFirstName] = useState("");
+  const [empty, setEmpty] = useState(false);
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -36,9 +37,13 @@ const SignUp = () => {
       email: email,
       password: password
     }
+    if(firstName === "" || lastName === "" || email === ""){
+      setEmpty(true)
+      return;
+    }
     if(passwordMatch && password !== ""){
       const users = await localStorage.getItem("users") || []
-      await localStorage.setItem("user", JSON.stringify([...users, user]))
+      await localStorage.setItem("users", JSON.stringify([...users, user]))
       navigate("/sign-in")
     } else{
         setRegistered(false)
@@ -56,44 +61,39 @@ const SignUp = () => {
         </div>
         <div className="signup-form-info">
           <form onSubmit={handleSubmit}>
-              <label className='label-text'>First Name</label><br/>
+              <label htmlFor='firstname' className='label-text'>First Name</label><br/>
               <input 
               type="text" 
               name="firstname"
               onChange={(e) => setFirstName(e.target.value)} 
-              // required
               />
 
-              <label className='label-text'>Last Name</label><br/>
+              <label htmlFor='lastname' className='label-text'>Last Name</label><br/>
               <input 
               type="text" 
               name="lastname" 
               onChange={(e) => setLastName(e.target.value)} 
-              // required
               />
 
-              <label className='label-text'>Email</label><br/>
+              <label htmlFor='email' className='label-text'>Email</label><br/>
               <input 
               type="email" 
               name="email" 
               onChange={(e) => setEmail(e.target.value)} 
-              // required
               />
 
-              <label className='label-text'>Password</label><br/>
+              <label htmlFor='password' className='label-text'>Password</label><br/>
               <input 
               type="password" 
               name="password" 
               onChange={(e) => setPassword(e.target.value)} 
-              // required
               />
 
-              <label className='label-text'>Confirm password</label><br/>
+              <label htmlFor='cpassword' className='label-text'>Confirm password</label><br/>
               <input 
               type="password" 
               name="cpassword"
               onChange={(e) => setCPassword(e.target.value)} 
-              // required
               />
               <p className={passwordMatch ? "pass_match" : "pass_match false"}>passwords do not match</p>
 
@@ -102,6 +102,7 @@ const SignUp = () => {
                 <input type="submit" className='submit-btn' value="SUBMIT" />
               </div>
           </form>
+          {empty && <p className='empty'>First Name, Last Name and Email</p>}
           <p className={registered ? "registered": "registered registered_not"}>kindly confirm your password entered</p>
         </div>
      </div>

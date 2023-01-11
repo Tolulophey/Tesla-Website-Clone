@@ -12,4 +12,4 @@ function FifthBanner() {
   )
 }
 
-export default FifthBanner
+export default React.memo(FifthBanner)

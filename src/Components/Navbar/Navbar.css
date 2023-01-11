@@ -261,5 +261,6 @@
     .home-navbar > .bottom > .home-buttons > a ,
     .home-navbar > .bottom > .home-buttons > p{
         padding: 20px;
+        cursor: pointer;
     }
 }

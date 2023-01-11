@@ -9,7 +9,6 @@ import {BsCart2} from 'react-icons/bs'
 import {useNavigate} from "react-router-dom"
 import {CartContext} from "../../App"
 import { HashLink } from 'react-router-hash-link';
-// import { SlArrowDown } from "react-icons/sl";
 
 
 function Navbar() {
@@ -52,7 +51,7 @@ function Navbar() {
   }, [navbar])
 
   return (
-      <div class={
+      <div className={
         navbar && toggleMenu ? 'home-navbar show active' :
           !navbar && toggleMenu ? "home-navbar show" :
             navbar && !toggleMenu ? "home-navbar active": 'home-navbar'
@@ -106,24 +105,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
-
-
-      //   <div className={navbar ? 'navbar_smallscreen active' : 'navbar_smallscreen'}>
-      //   <GiHamburgerMenu cursor="pointer" color="black" fontSize={27} onClick={()=>setToggleMenu(true)}  className="hamburger"/>
-      //   {
-      //   toggleMenu && (
-      //   <div className="smallscreen-overlay">
-      //     <AiOutlineClose color="#fff" cursor="pointer" fontSize={27} className="overlay-close" onClick={()=>setToggleMenu(false)}/>
-      //     <ul className='smallscreen-links' onClick={()=>setToggleMenu(false)}>
-      //       <li className='opensans'><a href="#home">Model S</a></li>
-      //       <li className='opensans'><a href="#about">Model 3</a></li>
-      //       <li className='opensans'><a href="#menu">Model X</a></li>
-      //       <li className='opensans'><a href="#contact">Solar Roof</a></li>
-      //       <li className='opensans'><a href="#contact">Solar Panels</a></li>
-      //       <li className='opensans'><a href="#gallery">Account</a></li>
-      //   </ul>
-      //   </div>
-      //   )}
-        
-      // </div>
+export default React.memo(Navbar)
